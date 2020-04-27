@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Nanako">
 <meta property="og:description" content="首先引入一个问题。LibreOJ 6235：令 $\pi(n)$ 为 $n$ 以内的质数个数，求 $\pi(n)$ $(1 \leq n \leq 10^{11})$。 当然你可能会说你有分段打表的做法。众所周知，$1 \leq l \leq r \leq 10^{12}$ 且 $0 \leq r - l \leq 10^6$ 时，$[l, r]$ 中质数个数有一个很 trivial 的 $O((">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-27T06:58:21.009Z">
+<meta property="og:updated_time" content="2020-04-27T08:05:17.748Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Meissel-Lehmer算法">
 <meta name="twitter:description" content="首先引入一个问题。LibreOJ 6235：令 $\pi(n)$ 为 $n$ 以内的质数个数，求 $\pi(n)$ $(1 \leq n \leq 10^{11})$。 当然你可能会说你有分段打表的做法。众所周知，$1 \leq l \leq r \leq 10^{12}$ 且 $0 \leq r - l \leq 10^6$ 时，$[l, r]$ 中质数个数有一个很 trivial 的 $O((">
@@ -395,7 +395,6 @@
         <p>首先引入一个问题。LibreOJ 6235：令 $\pi(n)$ 为 $n$ 以内的质数个数，求 $\pi(n)$ $(1 \leq n \leq 10^{11})$。</p>
 <p>当然你可能会说你有分段打表的做法。众所周知，$1 \leq l \leq r \leq 10^{12}$ 且 $0 \leq r - l \leq 10^6$ 时，$[l, r]$ 中质数个数有一个很 trivial 的 $O((r - l)\log \log  \sqrt r)$ 的做法。在这个基础上把 $[1, 10^{11}]$ 分成 $10^4$ 段，每段在本地预处理一下，段外的部分再单独算。这样分段打表确实可以卡过去，但是我们有不那么生草的做法：Meissel-Lehmer 算法可以在 $O(n^{\frac23})$ 的时间复杂度内计算 $\pi(n)$。</p>
 <p>这个算法在算法竞赛选手之间并不怎么普及（所以想写这篇文章），可能是因为实现起来确实略微有点麻烦（尤其是对不能抄板子的 OI 选手来说？）。虽然说 Miller-Rabin 素性判断和 Pollard-Rho 质因数分解也很麻烦，但也面对的场景大概也多一些，相比之下 Meissel-Lehmer 算法在算法竞赛生涯中可能遇不到几次（？）。目前见到的相关题目只有 2016 ICPC 沈阳赛区网络赛 J 和 2020 毛营 Day5 I，更生草的是可以看到后者的官方题解就是分段打表……大概进一步印证了这个算法的冷门……？</p>
-<a id="more"></a>
 <h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>令 $p_1, p_2, \dots, p_m$ 为前 $m$ 个质数。定义 $\phi(n, m)$ 为 $[1, n]$ 内所有质因子都大于 $p_m$ 的数的个数，$P_k(n, m)$ 为 $[1, n]$ 内恰有 $k$ 个大于 $p_m$ 的质因子的数的个数。 特别地，令 $P_0(n, m) = 1$，则有</p>
 <script type="math/tex; mode=display">
 \phi(n, m) = P_0(n, m) + P_1(n, m) + \dots + P_k(n, m) + \dots</script><p>注意到 $p_m^k &gt; n$ 时有 $P_k(n, m) = 0$，所以，如果我们取 $x \in [n^{\frac13}, n^{\frac12}]$ 并令 $m = \pi(x)$，对于任意 $k \geq 3$，都有 $P_k(n, m) = 0$。即，</p>
