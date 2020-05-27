@@ -23,12 +23,11 @@
 <script type="math/tex; mode=display">
 \pi(n) = \phi(n, m) - P_2(n, m) + m - 1</script><p>接下来，我们只需要计算 $\phi(n, m)$ 和 $P_2(n, m)$。根据定义，不难得到其计算方式如下：</p>
 <script type="math/tex; mode=display">
-P_2(n, m) = \sum_{x < p \leq \sqrt n} (\pi(\frac np) - \pi(p) + 1) \\
-
+P_2(n, m) = \sum_{x < p \leq \sqrt n} (\pi(\frac np) - \pi(p) + 1)</script><script type="math/tex; mode=display">
 \phi(n, m) =
 \begin{cases}
-[n]                                          & m = 0    \\
-\phi(n, m - 1) - \phi(\frac {n}{p_m}, m - 1) & m \geq 1
+[n],                                          & m = 0    \\
+\phi(n, m - 1) - \phi(\frac {n}{p_m}, m - 1), & m \geq 1
 \end{cases}</script><h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><h3 id="P-2-n-m"><a href="#P-2-n-m" class="headerlink" title="$P_2(n, m)$"></a>$P_2(n, m)$</h3><p>对于 $x &lt; p \leq \sqrt n$，显然有 $\frac np &lt; \frac nx &lt; n^{\frac 23}$，为了快速计算 $P_2(n, m)$，我们可以用线性筛 $O(n^\frac 23)$ 预处理 $[1, n^{\frac 23}]$ 内的质数，然后 $O(n^\frac 12)$ 进行累加。时间复杂度 $O(n^\frac 23)$，空间复杂度 $O(n^\frac 23)$。</p>
 <p>如果这个空间复杂度无法接受，我们可以时间换空间，少预处理一些，对于较大的询问则令 $\pi(n)$ 和 $P_2(n, m)$ 相互调用。那么时空复杂度是多少，究竟应该预处理多少呢？下面那份网上找的板子预处理的范围是 $5 \times 10^6$，并且认为可以降到 $n^\frac 13$，我暂且没算明白……</p>
 <h3 id="phi-n-m"><a href="#phi-n-m" class="headerlink" title="$\phi(n, m)$"></a>$\phi(n, m)$</h3><p>更算不明白了……这式子看上去挺慢的，然而又可以大力预处理大力剪枝（见板子），总之实际跑起来完全没问题。但很想知道时间复杂度怎么算……</p>

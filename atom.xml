@@ -51,7 +51,7 @@
     <link href="http://tanakarino.cn/2020/04/27/Meissel-Lehmer%E7%AE%97%E6%B3%95/"/>
     <id>http://tanakarino.cn/2020/04/27/Meissel-Lehmer%E7%AE%97%E6%B3%95/</id>
     <published>2020-04-26T18:12:29.000Z</published>
-    <updated>2020-05-27T14:45:42.634Z</updated>
+    <updated>2020-05-27T15:57:12.448Z</updated>
     
     <summary type="html">
     
@@ -66,12 +66,11 @@
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
 \pi(n) = \phi(n, m) - P_2(n, m) + m - 1&lt;/script&gt;&lt;p&gt;接下来，我们只需要计算 $\phi(n, m)$ 和 $P_2(n, m)$。根据定义，不难得到其计算方式如下：&lt;/p&gt;
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
-P_2(n, m) = \sum_{x &lt; p \leq \sqrt n} (\pi(\frac np) - \pi(p) + 1) \\
-
+P_2(n, m) = \sum_{x &lt; p \leq \sqrt n} (\pi(\frac np) - \pi(p) + 1)&lt;/script&gt;&lt;script type=&quot;math/tex; mode=display&quot;&gt;
 \phi(n, m) =
 \begin{cases}
-[n]                                          &amp; m = 0    \\
-\phi(n, m - 1) - \phi(\frac {n}{p_m}, m - 1) &amp; m \geq 1
+[n],                                          &amp; m = 0    \\
+\phi(n, m - 1) - \phi(\frac {n}{p_m}, m - 1), &amp; m \geq 1
 \end{cases}&lt;/script&gt;&lt;h2 id=&quot;复杂度分析&quot;&gt;&lt;a href=&quot;#复杂度分析&quot; class=&quot;headerlink&quot; title=&quot;复杂度分析&quot;&gt;&lt;/a&gt;复杂度分析&lt;/h2&gt;&lt;h3 id=&quot;P-2-n-m&quot;&gt;&lt;a href=&quot;#P-2-n-m&quot; class=&quot;headerlink&quot; title=&quot;$P_2(n, m)$&quot;&gt;&lt;/a&gt;$P_2(n, m)$&lt;/h3&gt;
     
     </summary>
