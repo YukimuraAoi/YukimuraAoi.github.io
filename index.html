@@ -206,6 +206,122 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://tanakarino.cn/2020/06/02/Meissel-Lehmer%E7%AE%97%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/aoi.jpg">
+      <meta itemprop="name" content="Nanako">
+      <meta itemprop="description" content="此般平和的日常，若是能一直持续下去就好了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nanako">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/Meissel-Lehmer%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">Meissel-Lehmer算法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 18:34:41 / 修改时间：18:38:20" itemprop="dateCreated datePublished" datetime="2020-06-02T18:34:41+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">数论</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E8%AE%BA/%E6%95%B4%E9%99%A4%E4%B8%8E%E5%90%8C%E4%BD%99/" itemprop="url" rel="index"><span itemprop="name">整除与同余</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/06/02/Meissel-Lehmer%E7%AE%97%E6%B3%95/" class="post-meta-item leancloud_visitors" data-flag-title="Meissel-Lehmer算法" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/02/Meissel-Lehmer%E7%AE%97%E6%B3%95/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/02/Meissel-Lehmer%E7%AE%97%E6%B3%95/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h1><p>首先引入一个问题。LibreOJ 6235：令 $\pi(n)$ 为 $n$ 以内的质数个数，求 $\pi(n)$ $(1 \leq n \leq 10^{11})$。</p>
+<p>当然你可能会说你有分段打表的做法。众所周知，$1 \leq l \leq r \leq 10^{12}$ 且 $0 \leq r - l \leq 10^6$ 时，$[l, r]$ 中质数个数有一个很 trivial 的类似 Eratosthenes 筛的 $O((r - l)\log \log  \sqrt r)$ 的做法。在这个基础上把 $[1, 10^{11}]$ 分成 $10^4$ 段，每段在本地预处理一下，段外的部分再单独算。这样分段打表确实可以卡过去，但是我们有不那么生草的做法：<del>洲阁筛</del> <del>min_25筛</del> Meissel-Lehmer 算法可以在 $O(n^{\frac23})$ 的时间复杂度内计算 $\pi(n)$。</p>
+<p>这个算法在算法竞赛选手之间并不怎么普及（所以想写这篇文章），可能是因为实现起来确实略微有点麻烦（尤其是对不能抄板子的 OI 选手来说？）。虽然说 Miller-Rabin 素性判断和 Pollard-Rho 质因数分解也很麻烦，但也面对的场景大概也多一些，相比之下 Meissel-Lehmer 算法在算法竞赛生涯中可能遇不到几次（？）。目前见到的相关题目只有 2016 ICPC 沈阳赛区网络赛 J 和 2020 毛营 Day5 I，更生草的是可以看到后者的官方题解就是分段打表……大概进一步印证了这个算法的冷门……？</p>
+<h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>令 $p_1, p_2, \dots, p_m$ 为前 $m$ 个质数。定义 $\phi(n, m)$ 为 $[1, n]$ 内所有质因子都大于 $p_m$ 的数的个数，$P_k(n, m)$ 为 $[1, n]$ 内恰有 $k$ 个大于 $p_m$ 的质因子的数的个数。 特别地，令 $P_0(n, m) = 1$，则有</p>
+<script type="math/tex; mode=display">
+\phi(n, m) = P_0(n, m) + P_1(n, m) + \dots + P_k(n, m) + \dots</script><p>注意到 $p_m^k &gt; n$ 时有 $P_k(n, m) = 0$，所以，如果我们取 $x \in [n^{\frac13}, n^{\frac12}]$ 并令 $m = \pi(x)$，对于任意 $k \geq 3$，都有 $P_k(n, m) = 0$。即，</p>
+<script type="math/tex; mode=display">
+\phi(n, m) = P_0(n, m) + P_1(n, m) + P_2(n, m)</script><p>根据定义，显然 $P_1(n, m) = \pi(n) - m$，于是我们对上式适当变换，得</p>
+<script type="math/tex; mode=display">
+\pi(n) = \phi(n, m) - P_2(n, m) + m - 1</script><p>接下来，我们只需要计算 $\phi(n, m)$ 和 $P_2(n, m)$。根据定义，不难得到其计算方式如下：</p>
+<script type="math/tex; mode=display">
+P_2(n, m) = \sum_{x < p \leq \sqrt n} (\pi(\frac np) - \pi(p) + 1)</script><script type="math/tex; mode=display">
+\phi(n, m) =
+\begin{cases}
+[n],                                          & m = 0    \\
+\phi(n, m - 1) - \phi(\frac {n}{p_m}, m - 1), & m \geq 1
+\end{cases}</script><h1 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/02/Meissel-Lehmer%E7%AE%97%E6%B3%95/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-L/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1083,7 +1199,7 @@ ans_{1}(inv) = inv \cdot a</script><p>考虑加上第二种操作，我们不难
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-06-02 18:24:47" itemprop="dateModified" datetime="2020-06-02T18:24:47+08:00">2020-06-02</time>
+                <time title="修改时间：2020-06-02 18:38:36" itemprop="dateModified" datetime="2020-06-02T18:38:36+08:00">2020-06-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1154,133 +1270,8 @@ ans_{1}(inv) = inv \cdot a</script><p>考虑加上第二种操作，我们不难
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://tanakarino.cn/2020/04/27/Meissel-Lehmer%E7%AE%97%E6%B3%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/aoi.jpg">
-      <meta itemprop="name" content="Nanako">
-      <meta itemprop="description" content="此般平和的日常，若是能一直持续下去就好了">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nanako">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/27/Meissel-Lehmer%E7%AE%97%E6%B3%95/" class="post-title-link" itemprop="url">Meissel-Lehmer算法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-04-27 02:12:29" itemprop="dateCreated datePublished" datetime="2020-04-27T02:12:29+08:00">2020-04-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-28 01:58:16" itemprop="dateModified" datetime="2020-05-28T01:58:16+08:00">2020-05-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">数论</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E8%AE%BA/%E6%95%B4%E9%99%A4%E4%B8%8E%E5%90%8C%E4%BD%99/" itemprop="url" rel="index"><span itemprop="name">整除与同余</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/04/27/Meissel-Lehmer%E7%AE%97%E6%B3%95/" class="post-meta-item leancloud_visitors" data-flag-title="Meissel-Lehmer算法" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/04/27/Meissel-Lehmer%E7%AE%97%E6%B3%95/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/27/Meissel-Lehmer%E7%AE%97%E6%B3%95/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>首先引入一个问题。LibreOJ 6235：令 $\pi(n)$ 为 $n$ 以内的质数个数，求 $\pi(n)$ $(1 \leq n \leq 10^{11})$。</p>
-<p>当然你可能会说你有分段打表的做法。众所周知，$1 \leq l \leq r \leq 10^{12}$ 且 $0 \leq r - l \leq 10^6$ 时，$[l, r]$ 中质数个数有一个很 trivial 的类似 Eratosthenes 筛的 $O((r - l)\log \log  \sqrt r)$ 的做法。在这个基础上把 $[1, 10^{11}]$ 分成 $10^4$ 段，每段在本地预处理一下，段外的部分再单独算。这样分段打表确实可以卡过去，但是我们有不那么生草的做法：<del>洲阁筛</del> <del>min_25筛</del> Meissel-Lehmer 算法可以在 $O(n^{\frac23})$ 的时间复杂度内计算 $\pi(n)$。</p>
-<p>这个算法在算法竞赛选手之间并不怎么普及（所以想写这篇文章），可能是因为实现起来确实略微有点麻烦（尤其是对不能抄板子的 OI 选手来说？）。虽然说 Miller-Rabin 素性判断和 Pollard-Rho 质因数分解也很麻烦，但也面对的场景大概也多一些，相比之下 Meissel-Lehmer 算法在算法竞赛生涯中可能遇不到几次（？）。目前见到的相关题目只有 2016 ICPC 沈阳赛区网络赛 J 和 2020 毛营 Day5 I，更生草的是可以看到后者的官方题解就是分段打表……大概进一步印证了这个算法的冷门……？</p>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>令 $p_1, p_2, \dots, p_m$ 为前 $m$ 个质数。定义 $\phi(n, m)$ 为 $[1, n]$ 内所有质因子都大于 $p_m$ 的数的个数，$P_k(n, m)$ 为 $[1, n]$ 内恰有 $k$ 个大于 $p_m$ 的质因子的数的个数。 特别地，令 $P_0(n, m) = 1$，则有</p>
-<script type="math/tex; mode=display">
-\phi(n, m) = P_0(n, m) + P_1(n, m) + \dots + P_k(n, m) + \dots</script><p>注意到 $p_m^k &gt; n$ 时有 $P_k(n, m) = 0$，所以，如果我们取 $x \in [n^{\frac13}, n^{\frac12}]$ 并令 $m = \pi(x)$，对于任意 $k \geq 3$，都有 $P_k(n, m) = 0$。即，</p>
-<script type="math/tex; mode=display">
-\phi(n, m) = P_0(n, m) + P_1(n, m) + P_2(n, m)</script><p>根据定义，显然 $P_1(n, m) = \pi(n) - m$，于是我们对上式适当变换，得</p>
-<script type="math/tex; mode=display">
-\pi(n) = \phi(n, m) - P_2(n, m) + m - 1</script><p>接下来，我们只需要计算 $\phi(n, m)$ 和 $P_2(n, m)$。根据定义，不难得到其计算方式如下：</p>
-<script type="math/tex; mode=display">
-P_2(n, m) = \sum_{x < p \leq \sqrt n} (\pi(\frac np) - \pi(p) + 1)</script><script type="math/tex; mode=display">
-\phi(n, m) =
-\begin{cases}
-[n],                                          & m = 0    \\
-\phi(n, m - 1) - \phi(\frac {n}{p_m}, m - 1), & m \geq 1
-\end{cases}</script><h2 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h2><h3 id="P-2-n-m"><a href="#P-2-n-m" class="headerlink" title="$P_2(n, m)$"></a>$P_2(n, m)$</h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/04/27/Meissel-Lehmer%E7%AE%97%E6%B3%95/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
 
 
 
@@ -1347,20 +1338,20 @@ P_2(n, m) = \sum_{x < p \leq \sqrt n} (\pi(\frac np) - \pi(p) + 1)</script><scri
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
