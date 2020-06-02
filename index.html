@@ -136,17 +136,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">12</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">15</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">11</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">13</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -202,6 +202,219 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://tanakarino.cn/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/aoi.jpg">
+      <meta itemprop="name" content="Nanako">
+      <meta itemprop="description" content="此般平和的日常，若是能一直持续下去就好了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nanako">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-C/" class="post-title-link" itemprop="url">2020 CCPC-Wannafly Winter Camp Day 1 C</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 18:58:21 / 修改时间：18:59:50" itemprop="dateCreated datePublished" datetime="2020-06-02T18:58:21+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">数论</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E8%AE%BA/%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97/" itemprop="url" rel="index"><span itemprop="name">数论分块</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-C/" class="post-meta-item leancloud_visitors" data-flag-title="2020 CCPC-Wannafly Winter Camp Day 1 C" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-C/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-C/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Problem-C-染色图"><a href="#Problem-C-染色图" class="headerlink" title="Problem C. 染色图"></a>Problem C. 染色图</h1><p><del>色图？哪里有色图？</del></p>
+<h2 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h2><p>在一张无向图中，如果存在一种方案，使得给每个结点染上一种颜色 $c_i \in [1,k]$ 后，任意一对相邻结点的颜色不同，则称这张无向图可以 $k$ 染色。在有 $n$ 个节点的、可以 $k$ 染色的所有简单图中，选出边数最多的一个，我们记其边数为 $g(n,k)$。</p>
+<p>现在，给定 $n,l,r$，求 $\sum_{i=l}^{r} g(n,i)$ 对 $998244353$ 取余后的结果。有 $T$ 组测试数据。</p>
+<p>$1 \leq T \leq 1000$</p>
+<p>$1 \leq l \leq r \leq n \leq 10^9$</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>考虑一张有 $n$ 个结点染上 $k$ 种颜色，每种颜色使用了 $a_i$ 次。既然只有同色是不能连边的，那么我们把除了同色的团只玩的边全部连起来。一个大小为 $x$ 的团有 $\frac{x(x+1)}2$ 条边，那么总边数应该是</p>
+<script type="math/tex; mode=display">
+\frac{n(n+1)}2 -
+\sum_{i=1}^{k} \frac{a_i(a_i+1)}2</script><p>不难发现，要最大化总边数其实也就是要最小化 $\sum_{i=1}^k a_i^2$。所以，$a_i$ 肯定是均分，即有 $n \bmod k$ 个 $a_i$ 等于 $\lfloor \frac nk \rfloor + 1$，剩下的 $k - n \bmod k$ 个 $a_i$ 等于 $\lfloor \frac nk \rfloor$。<del>所谓「大胆猜想，从不求证」。证明？问就是不会。这是学了这么多年数学的数学直觉。</del></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-C/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://tanakarino.cn/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/aoi.jpg">
+      <meta itemprop="name" content="Nanako">
+      <meta itemprop="description" content="此般平和的日常，若是能一直持续下去就好了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nanako">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-B/" class="post-title-link" itemprop="url">2020 CCPC-Wannafly Winter Camp Day 1 B</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 18:56:20 / 修改时间：18:57:57" itemprop="dateCreated datePublished" datetime="2020-06-02T18:56:20+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">基础算法</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E6%A8%A1%E6%8B%9F/" itemprop="url" rel="index"><span itemprop="name">模拟</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-B/" class="post-meta-item leancloud_visitors" data-flag-title="2020 CCPC-Wannafly Winter Camp Day 1 B" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-B/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-B/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Problem-B-密码学"><a href="#Problem-B-密码学" class="headerlink" title="Problem B. 密码学"></a>Problem B. 密码学</h1><h2 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h2><p>将小写字母从 $0$ 到 $25$ 编号，将大写字母从 $26$ 到 $51$ 编号。用字符 $a$ 加密字符 $b$ 得到的字符，是 $a$ 和 $b$ 的编号相加后对 $52$ 取余后的结果对应的字符。用字符串 $key$ 加密字符串 $s$ 得到的字符串长度与 $s$ 相同，其中，第 $i$ 个字符是用 $key_i$ 加密 $s_i$ 得到的字符，如果 $key$ 的长度不够，则将 $key$ 重复多次。</p>
+<p>有 $n$ 个字符串 $s_1,s_2,\dots,s_n$ 和 $m$ 次加密操作 $(x_1,y_1),(x_2,y_2),\dots,(x_n,y_n)$。第 $i$ 次加密操作用 $s_{x_i}$ 加密 $s_{y_i}$，并将 $s_{y_i}$ 替换为加密结果。现在给出 $n$ 个字符串的最终结果和 $m$ 次加密操作，求 $n$ 个字符串的初始值。</p>
+<p>$1 \leq n,m \leq 1000$, $1 \leq x_i,y_i \leq n$</p>
+<p>$1 \leq |s_i| \leq 100$</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>模拟题，没啥好说的……加密是加解密就是减……</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> x[N], y[N];</span><br><span class="line"><span class="keyword">char</span> s[N][<span class="number">105</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">chartoint</span> <span class="params">(<span class="keyword">char</span> c)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> ((<span class="string">'a'</span> &lt;= c) &amp;&amp; (c &lt;= <span class="string">'z'</span>)) <span class="keyword">return</span> c - <span class="string">'a'</span>;</span><br><span class="line">	<span class="keyword">if</span> ((<span class="string">'A'</span> &lt;= c) &amp;&amp; (c &lt;= <span class="string">'Z'</span>)) <span class="keyword">return</span> c - <span class="string">'A'</span> + <span class="number">26</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">char</span> <span class="title">inttochar</span> <span class="params">(<span class="keyword">int</span> a)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> ((<span class="number">0</span> &lt;= a) &amp;&amp; (a &lt;= <span class="number">25</span>)) <span class="keyword">return</span> a + <span class="string">'a'</span>;</span><br><span class="line">	<span class="keyword">if</span> ((<span class="number">26</span> &lt;= a) &amp;&amp; (a &lt;= <span class="number">51</span>)) <span class="keyword">return</span> a - <span class="number">26</span> + <span class="string">'A'</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n, m;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;n, &amp;m);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= m;i++) &#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;x[i], &amp;y[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++) &#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%s"</span>, &amp;s[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = m;i &gt;= <span class="number">1</span>;i--) &#123;</span><br><span class="line">		<span class="keyword">int</span> lx = <span class="built_in">strlen</span>(s[x[i]]);</span><br><span class="line">		<span class="keyword">int</span> ly = <span class="built_in">strlen</span>(s[y[i]]);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>;j &lt; ly;j++) &#123;</span><br><span class="line">			<span class="keyword">int</span> tmp = <span class="number">0</span>;</span><br><span class="line">			tmp += chartoint(s[y[i]][j]);</span><br><span class="line">			tmp -= chartoint(s[x[i]][j % lx]);</span><br><span class="line">			tmp += <span class="number">52</span>;</span><br><span class="line">			tmp %= <span class="number">52</span>;</span><br><span class="line">			s[y[i]][j] = inttochar(tmp);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%s\n"</span>, s[i]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-B/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -1042,228 +1255,6 @@ P_2(n, m) = \sum_{x < p \leq \sqrt n} (\pi(\frac np) - \pi(p) + 1)</script><scri
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-F/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/aoi.jpg">
-      <meta itemprop="name" content="Nanako">
-      <meta itemprop="description" content="此般平和的日常，若是能一直持续下去就好了">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nanako">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-F/" class="post-title-link" itemprop="url">2020 Petrozavodsk Winter Camp Day 5 F</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-06-02 17:57:10 / 修改时间：18:19:42" itemprop="dateCreated datePublished" datetime="2020-06-02T17:57:10+08:00">2020-06-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E5%AD%A6/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/" itemprop="url" rel="index"><span itemprop="name">概率与期望</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-F/" class="post-meta-item leancloud_visitors" data-flag-title="2020 Petrozavodsk Winter Camp Day 5 F" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-F/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-F/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Problem-F-The-Halfwitters"><a href="#Problem-F-The-Halfwitters" class="headerlink" title="Problem F. The Halfwitters"></a>Problem F. The Halfwitters</h1><h2 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h2><p>给定长度 $n$，给定 $a, b, c$，给 $d$ 次询问。每次询问是一个长度为 $n$ 的排列，你可以对这个票列做三种操作：</p>
-<ol>
-<li><p>花费 $a$ 代价，交换相邻的两个数；</p>
-</li>
-<li><p>花费 $b$ 代价，翻转这个排列；</p>
-</li>
-<li><p>花费 $c$ 代价，shuffle 这个排列。</p>
-</li>
-</ol>
-<p>对于每次询问，你需要求出，在最优的操作策略下，把排列排成升序所需的最小期望代价。有 $z$ 组测试数据。</p>
-<p>$2 \leq n \leq 16$, $1 \leq a, b, c \leq 1000$, $1 \leq d \leq 10000$</p>
-<p> $\sum d \leq 10^5$</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>考虑只有第一种操作，我们不难发现，总代价只跟逆序对数 $inv$ 有关。</p>
-<script type="math/tex; mode=display">
-ans_{1}(inv) = inv \cdot a</script><p>考虑加上第二种操作，我们不难发现，先翻转一下再只进行以上操作可能会更快！</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-F/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-B/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/aoi.jpg">
-      <meta itemprop="name" content="Nanako">
-      <meta itemprop="description" content="此般平和的日常，若是能一直持续下去就好了">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nanako">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-B/" class="post-title-link" itemprop="url">2020 Petrozavodsk Winter Camp Day 5 B</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-06-02 17:51:19 / 修改时间：18:20:11" itemprop="dateCreated datePublished" datetime="2020-06-02T17:51:19+08:00">2020-06-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">数论</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E8%AE%BA/FMT-FWT/" itemprop="url" rel="index"><span itemprop="name">FMT/FWT</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-B/" class="post-meta-item leancloud_visitors" data-flag-title="2020 Petrozavodsk Winter Camp Day 5 B" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-B/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-B/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Problem-B-Binomial"><a href="#Problem-B-Binomial" class="headerlink" title="Problem B. Binomial"></a>Problem B. Binomial</h1><h2 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h2><p>给定序列 $a_1,a_2,\dots, a_n$，问有多少对 $(a_i,a_j)$ 满足 $\binom{a_i}{a_j} \bmod 2 = 1$ 。有 $z$ 组测试数据。</p>
-<p>$1 \leq z \leq 10$</p>
-<p>$1 \leq n \leq 10^6$, $1 \leq a_i \leq 10^6$</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Lucas 定理有一个经典的推论：</p>
-<script type="math/tex; mode=display">
-\binom{a_i}{a_j} \bmod 2 = 1 \leftrightarrow a_i \& a_j = a_j</script><p>因此，问题转化为求</p>
-<script type="math/tex; mode=display">
-\sum_{i=1}^{n} \sum_{j=1}^{n} [a_i \& a_j = a_j]</script><p>记 $m = \lceil \log (\max a_i) \rceil$。显然，暴力枚举可以做到 $O(n^2)$ 的复杂度。优化一下，枚举子集可以做到 $O(3^m)$ 的复杂度。但是要通过这题还是不够。clp012345 说可以 <a href="https://codeforces.com/blog/entry/45223" target="_blank" rel="noopener">Sum over Submask DP</a> 做到 $O(m2^m)$，于是 triple_a 就现学现用写了一个。</p>
-<p>这个算法本身就不讲了，可以看上面链接的文章。在国内，这个算法一般被称作快速莫比乌斯变换 (FMT) 或者子集和变换，英文不好的话也可以搜这两个词，但感觉其实大部分文章都写得对新手不是很友好。个人觉得可以看<a href="http://blog.leanote.com/post/rockdu/TX20" target="_blank" rel="noopener">这篇</a>，我觉得下面这张插图真的把 FMT 解释得非常清楚。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-B/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1335,20 +1326,20 @@ ans_{1}(inv) = inv \cdot a</script><p>考虑加上第二种操作，我们不难
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">13</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

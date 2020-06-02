@@ -20,17 +20,20 @@
     var CONFIG = {"hostname":"tanakarino.cn","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="此般平和的日常，若是能一直持续下去就好了">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Nanako">
-<meta property="og:url" content="http://tanakarino.cn/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/index.html">
+  <meta name="description" content="Problem C. 染色图色图？哪里有色图？ Statement在一张无向图中，如果存在一种方案，使得给每个结点染上一种颜色 $c_i \in [1,k]$ 后，任意一对相邻结点的颜色不同，则称这张无向图可以 $k$ 染色。在有 $n$ 个节点的、可以 $k$ 染色的所有简单图中，选出边数最多的一个，我们记其边数为 $g(n,k)$。 现在，给定 $n,l,r$，求 $\sum_{i&#x3D;l}^{r">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2020 CCPC-Wannafly Winter Camp Day 1 C">
+<meta property="og:url" content="http://tanakarino.cn/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-C/index.html">
 <meta property="og:site_name" content="Nanako">
-<meta property="og:description" content="此般平和的日常，若是能一直持续下去就好了">
+<meta property="og:description" content="Problem C. 染色图色图？哪里有色图？ Statement在一张无向图中，如果存在一种方案，使得给每个结点染上一种颜色 $c_i \in [1,k]$ 后，任意一对相邻结点的颜色不同，则称这张无向图可以 $k$ 染色。在有 $n$ 个节点的、可以 $k$ 染色的所有简单图中，选出边数最多的一个，我们记其边数为 $g(n,k)$。 现在，给定 $n,l,r$，求 $\sum_{i&#x3D;l}^{r">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-02T10:58:21.000Z">
+<meta property="article:modified_time" content="2020-06-02T10:59:50.256Z">
 <meta property="article:author" content="Nanako">
+<meta property="article:tag" content="数论分块">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://tanakarino.cn/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/">
+<link rel="canonical" href="http://tanakarino.cn/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-C/">
 
 
 <script id="page-configurations">
@@ -38,7 +41,7 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
@@ -55,7 +58,7 @@
 	POWERMODE.shake = false;
 	document.body.addEventListener('input',POWERMODE);
 </script>
-  <title>标签: 并查集 | Nanako</title>
+  <title>2020 CCPC-Wannafly Winter Camp Day 1 C | Nanako</title>
   
 
 
@@ -200,57 +203,167 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://tanakarino.cn/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/aoi.jpg">
+      <meta itemprop="name" content="Nanako">
+      <meta itemprop="description" content="此般平和的日常，若是能一直持续下去就好了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nanako">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2020 CCPC-Wannafly Winter Camp Day 1 C
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 18:58:21 / 修改时间：18:59:50" itemprop="dateCreated datePublished" datetime="2020-06-02T18:58:21+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">数论</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E8%AE%BA/%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97/" itemprop="url" rel="index"><span itemprop="name">数论分块</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-C/" class="post-meta-item leancloud_visitors" data-flag-title="2020 CCPC-Wannafly Winter Camp Day 1 C" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">并查集
-          <small>标签</small>
-        </h2>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-C/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-C/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <h1 id="Problem-C-染色图"><a href="#Problem-C-染色图" class="headerlink" title="Problem C. 染色图"></a>Problem C. 染色图</h1><p><del>色图？哪里有色图？</del></p>
+<h2 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h2><p>在一张无向图中，如果存在一种方案，使得给每个结点染上一种颜色 $c_i \in [1,k]$ 后，任意一对相邻结点的颜色不同，则称这张无向图可以 $k$ 染色。在有 $n$ 个节点的、可以 $k$ 染色的所有简单图中，选出边数最多的一个，我们记其边数为 $g(n,k)$。</p>
+<p>现在，给定 $n,l,r$，求 $\sum_{i=l}^{r} g(n,i)$ 对 $998244353$ 取余后的结果。有 $T$ 组测试数据。</p>
+<p>$1 \leq T \leq 1000$</p>
+<p>$1 \leq l \leq r \leq n \leq 10^9$</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>考虑一张有 $n$ 个结点染上 $k$ 种颜色，每种颜色使用了 $a_i$ 次。既然只有同色是不能连边的，那么我们把除了同色的团只玩的边全部连起来。一个大小为 $x$ 的团有 $\frac{x(x+1)}2$ 条边，那么总边数应该是</p>
+<script type="math/tex; mode=display">
+\frac{n(n+1)}2 -
+\sum_{i=1}^{k} \frac{a_i(a_i+1)}2</script><p>不难发现，要最大化总边数其实也就是要最小化 $\sum_{i=1}^k a_i^2$。所以，$a_i$ 肯定是均分，即有 $n \bmod k$ 个 $a_i$ 等于 $\lfloor \frac nk \rfloor + 1$，剩下的 $k - n \bmod k$ 个 $a_i$ 等于 $\lfloor \frac nk \rfloor$。<del>所谓「大胆猜想，从不求证」。证明？问就是不会。这是学了这么多年数学的数学直觉。</del></p>
+<p>又考虑到 $n \bmod k$ 其实就等于 $n - k\lfloor \frac nk \rfloor$，所以，我们得出一个很长很长的式子</p>
+<script type="math/tex; mode=display">
+g(n, k) = \frac {n(n+1)} {2}
+-
+(n - k\lfloor \frac nk \rfloor)       \cdot
+\frac {(\lfloor \frac nk \rfloor + 1)(\lfloor \frac nk \rfloor + 2)} {2}
+-
+(k - (n - k\lfloor \frac nk \rfloor)) \cdot
+\frac { \lfloor \frac nk \rfloor     (\lfloor \frac nk \rfloor + 1)} {2}</script><p>队友 Luowaterbi 化简了很久很久，结果好像是</p>
+<script type="math/tex; mode=display">
+g(n, k) = \frac 12
+(
+n^2 - n -
+2n \lfloor \frac nk \rfloor + 
+k \lfloor \frac nk \rfloor +
+k \lfloor \frac nk \rfloor ^ 2
+)</script><p><del>太久远了我也不知道是不是对的建议自己化简一遍</del></p>
+<p>然后大力往上套数论分块就过辣！时间复杂度 $O(T \sqrt n)$。</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> M = <span class="number">1e3</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">998244353</span>;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">qpow</span> <span class="params">(ll a, ll b)</span> </span>&#123;</span><br><span class="line">	ll ret = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (b) &#123;</span><br><span class="line">		<span class="keyword">if</span> (b &amp; <span class="number">1</span>) ret = ret * a % mod;</span><br><span class="line">		a = a * a % mod;</span><br><span class="line">		b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">inv</span> <span class="params">(ll a)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> qpow(a, mod - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> T;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;T);</span><br><span class="line">	<span class="keyword">while</span> (T--) &#123;</span><br><span class="line">		ll n, l0, r0;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%lld%lld%lld"</span>, &amp;n, &amp;l0, &amp;r0);</span><br><span class="line">		ll ans = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> l = l0, r;l &lt;= r0;l = r + <span class="number">1</span>) &#123;</span><br><span class="line">			ll k = n / l;</span><br><span class="line">			r = min(n / k, r0);</span><br><span class="line">			ll len = r - l + <span class="number">1</span>;</span><br><span class="line">			ll cur = <span class="number">0</span>;</span><br><span class="line">			cur += (n * n - n) % mod * len % mod;</span><br><span class="line">			cur -= <span class="number">2</span> * n * len % mod * k % mod;</span><br><span class="line">			cur += ((l + r) * len / <span class="number">2</span>) % mod * k % mod;</span><br><span class="line">			cur += ((l + r) * len / <span class="number">2</span>) % mod * k % mod * k % mod;</span><br><span class="line">			cur = (cur % mod + mod) % mod;</span><br><span class="line">			ans = (ans + cur) % mod;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>, ans * inv(<span class="number">2</span>) % mod);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+        
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-06-02T18:14:35+08:00"
-              content="2020-06-02">
-          06-02
-        </time>
-      </div>
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-J/" itemprop="url">
-            <span itemprop="name">2020 Petrozavodsk Winter Camp Day 5 J</span>
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
           </a>
-      </div>
-
-    </header>
-  </article>
-
+        </div>
     </div>
   </div>
-  
-  
-  
 
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E8%AE%BA%E5%88%86%E5%9D%97/" rel="tag"># 数论分块</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-B/" rel="prev" title="2020 CCPC-Wannafly Winter Camp Day 1 B">
+      <i class="fa fa-chevron-left"></i> 2020 CCPC-Wannafly Winter Camp Day 1 B
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -297,6 +410,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Problem-C-染色图"><span class="nav-text">Problem C. 染色图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Statement"><span class="nav-text">Statement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-text">Code</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
