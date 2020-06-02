@@ -136,17 +136,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">10</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">15</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">11</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -202,6 +202,111 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://tanakarino.cn/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/aoi.jpg">
+      <meta itemprop="name" content="Nanako">
+      <meta itemprop="description" content="此般平和的日常，若是能一直持续下去就好了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nanako">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-A/" class="post-title-link" itemprop="url">2020 CCPC-Wannafly Winter Camp Day 1 A</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 18:49:10 / 修改时间：18:51:54" itemprop="dateCreated datePublished" datetime="2020-06-02T18:49:10+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">基础算法</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/%E8%B4%AA%E5%BF%83/" itemprop="url" rel="index"><span itemprop="name">贪心</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-A/" class="post-meta-item leancloud_visitors" data-flag-title="2020 CCPC-Wannafly Winter Camp Day 1 A" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-A/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-A/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Problem-A-期望逆序对"><a href="#Problem-A-期望逆序对" class="headerlink" title="Problem A. 期望逆序对"></a>Problem A. 期望逆序对</h1><h2 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h2><p>给 $n$ 个随机变量 $x_1,x_2,\dots,x_n$，$x_i$ 的值是 $[l_i,r_i]$ 中随机选取的整数。你可以将这些随机变量排成任意的顺序，求逆序对数期望的最小值对 $998244353$ 取余后的结果。</p>
+<p>$1 \leq n \leq 5 \times 10^3$, $1 \leq l_i \leq r_i \leq 10^9$</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>事实上，取值的期望（即 $\frac{l_i+r_i}{2}$）越小就应该排在越前面，这样得到的序列的逆序对数的期望就是最小的。</p>
+<p>为什么呢？对于任意一个序列，我们选择相邻的两项，其他项不动，考虑这两项是否应该交换。如果前一项的期望比后一项大，那么显然交换之后逆序对数减小，所以答案的序列中相邻里两项一定是前一项的期望比较小，而要满足这个性质就只能令期望单增，于是我们确定了这个序列的顺序。</p>
+<p>之后就只需要 $O(n^2)$ 枚举每一对变量，$O(1)$ 计算其产生的逆序对数就行了。把两个变量看成分别在 $x$ 轴和 $y$ 轴上的区间，两个变量之间能产生的逆序对数其实就等价于一个矩形在 $y=x$ 的一侧的面积吧，这个就各凭本事吧，现场写的是分类讨论。</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> M = <span class="number">1e3</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod = <span class="number">998244353</span>;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">qpow</span> <span class="params">(ll a, ll b)</span> </span>&#123;</span><br><span class="line">	ll ret = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (b) &#123;</span><br><span class="line">		<span class="keyword">if</span> (b &amp; <span class="number">1</span>) ret = ret * a % mod;</span><br><span class="line">		a = a * a % mod;</span><br><span class="line">		b &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">inv</span> <span class="params">(ll a)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> qpow(a, mod - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> l, r;</span><br><span class="line">&#125; a[N];</span><br><span class="line">ll invv[N];</span><br><span class="line"><span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> node&amp; a, <span class="keyword">const</span> node&amp; b) &#123;</span><br><span class="line">	<span class="keyword">return</span> a.l + a.r &lt; b.l + b.r;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">ll <span class="title">calc</span> <span class="params">(<span class="keyword">const</span> node&amp; a, <span class="keyword">const</span> node&amp; b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (a.l &lt;= b.l) &#123;</span><br><span class="line">		<span class="keyword">if</span> (a.r &lt;= b.l) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span> ((a.r &gt; b.l) &amp;&amp; (a.r &lt;= b.r)) &#123;</span><br><span class="line">			ll tmp = a.r - b.l + <span class="number">1</span>;</span><br><span class="line">			<span class="keyword">return</span> tmp * (tmp - <span class="number">1</span>) / <span class="number">2</span> % mod;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (a.r &gt; b.r) &#123;</span><br><span class="line">			ll tmp = (b.r - b.l + <span class="number">1</span>);</span><br><span class="line">			ll sum = tmp * (tmp - <span class="number">1</span>) / <span class="number">2</span> % mod;</span><br><span class="line">			sum += (a.r - b.r) * tmp;</span><br><span class="line">			<span class="keyword">return</span> sum % mod;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">		ll tmp = (a.r - a.l + <span class="number">1</span>);</span><br><span class="line">		ll sum = tmp * (tmp - <span class="number">1</span>) / <span class="number">2</span> % mod;</span><br><span class="line">		sum += (a.l - b.l) * tmp;</span><br><span class="line">		<span class="keyword">return</span> sum % mod;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;n);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++) &#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;a[i].l, &amp;a[i].r);</span><br><span class="line">	&#125;</span><br><span class="line">	sort(a + <span class="number">1</span>, a + n + <span class="number">1</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++) &#123;</span><br><span class="line">		invv[i] = inv(a[i].r - a[i].l + <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	ll q = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++) &#123;</span><br><span class="line">		q *= a[i].r - a[i].l + <span class="number">1</span>;</span><br><span class="line">		q %= mod;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	ll p = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt;= n;i++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>;j &lt;= n;j++) &#123;</span><br><span class="line">			ll tmp = calc(a[i], a[j]);</span><br><span class="line">			tmp = tmp * invv[i] % mod;</span><br><span class="line">			tmp = tmp * invv[j] % mod;</span><br><span class="line">			p += tmp;</span><br><span class="line">			<span class="keyword">if</span> (p &gt;= mod) p -= mod;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%lld"</span>, p);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-A/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -1159,114 +1264,11 @@ ans_{1}(inv) = inv \cdot a</script><p>考虑加上第二种操作，我们不难
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-A/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/aoi.jpg">
-      <meta itemprop="name" content="Nanako">
-      <meta itemprop="description" content="此般平和的日常，若是能一直持续下去就好了">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nanako">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-A/" class="post-title-link" itemprop="url">2020 Petrozavodsk Winter Camp Day 5 A</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-06-02 17:46:06 / 修改时间：18:47:56" itemprop="dateCreated datePublished" datetime="2020-06-02T17:46:06+08:00">2020-06-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">数论</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E8%AE%BA/%E6%95%B4%E9%99%A4%E4%B8%8E%E5%90%8C%E4%BD%99/" itemprop="url" rel="index"><span itemprop="name">整除与同余</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-A/" class="post-meta-item leancloud_visitors" data-flag-title="2020 Petrozavodsk Winter Camp Day 5 A" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-A/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-A/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Problem-A-Bags-of-Candies"><a href="#Problem-A-Bags-of-Candies" class="headerlink" title="Problem A. Bags of Candies"></a>Problem A. Bags of Candies</h1><h2 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h2><p>把 $A = \{1,2,\dots,n\}$ 分成尽可能多对，使得每一对的两个数都不互质，问最大可能的对数。有 $z$ 组测试数据。</p>
-<p>$1 \leq z \leq 5$</p>
-<p>$2 \leq n \leq 10^{11}$</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>半场的时候动这个题的队伍只有个位数。可能大家都觉得有别的题可做，不像我这么菜别的都不会就来瞎猜结论了啊。于是结论就是，将 $1$ 和大于 $\frac n2$ 的质数从 $A$ 里删掉，剩下的集合 $A’$ 一定是可以匹配满的，所以答案就是 $\frac {|A’|}2$。</p>
-<p><del>赛中是瞎猜的，</del>这里给一个简单证明。</p>
-<p>将 $A’$ 的所有元素按最大质因子 $d$ 分组，那么每组都可以表示成 $A_d = \{d,2d,\dots,\lfloor \frac nd \rfloor d\}$ 的形式（注意并不一定 $|A_d|=\lfloor \frac nd \rfloor$，比如 $77 \notin A_7$），显然组内的数都是不互质的。</p>
-<p>如果 $|A_d|$ 是偶数，直接令组内的数任意两两配对；如果 $|A_d|$ 是奇数，则除了 $2d$ 以外任意两两配对。所有组都作完以上匹配之后，剩下的数都是 $2$ 的倍数，所以也都不互质，也可以任意两两配对。最后剩下的数显然至多只有一个。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-A/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -1333,20 +1335,20 @@ ans_{1}(inv) = inv \cdot a</script><p>考虑加上第二种操作，我们不难
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
