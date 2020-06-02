@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tanakarino.cn/"/>
-  <updated>2020-06-02T10:38:20.810Z</updated>
+  <updated>2020-06-02T10:44:14.906Z</updated>
   <id>http://tanakarino.cn/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[20200426] 2020 Petrozavodsk Winter Camp Day 5</title>
+    <link href="http://tanakarino.cn/2020/06/02/20200426-2020-Petrozavodsk-Winter-Camp-Day-5/"/>
+    <id>http://tanakarino.cn/2020/06/02/20200426-2020-Petrozavodsk-Winter-Camp-Day-5/</id>
+    <published>2020-06-02T10:42:17.000Z</published>
+    <updated>2020-06-02T10:44:14.906Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Review&quot;&gt;&lt;a href=&quot;#Review&quot; class=&quot;headerlink&quot; title=&quot;Review&quot;&gt;&lt;/a&gt;Review&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://codeforces.com/profile/triple__a&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;triple_a&lt;/a&gt; 问我和 &lt;a href=&quot;https://codeforces.com/profile/nezzar&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;clp012345&lt;/a&gt; 要不要来玩，于是我就打了&lt;del&gt;，前 World Finalist 带飞谁不爱呢&lt;/del&gt;。&lt;/p&gt;
+&lt;p&gt;因为纯属娱乐所以可能并不是全力打，不过也并没有做到同一时刻只有一个人写……总之就是图一乐吧。&lt;/p&gt;
+&lt;p&gt;刚开场的时候因为是娱乐所以他们两个也就随便开题不跟榜了，我们各自读了一下几道题。clp012345 开始猛凹 C 凹了接近两个小时&lt;del&gt;，结果是 C 最后也没过&lt;/del&gt;。我看到有人过 L 就大力 WA 了一发，发现把大于写成大于等于，&lt;strong&gt;43min2A&lt;/strong&gt;。B 题 triple_a 说只会 TLE 的枚举子集，于是 clp012345 说 Sum over Submask DP 能做，&lt;strong&gt;51min1A&lt;/strong&gt;。triple_a 又读了 I 题，说做法显然但是难写，我一看题居然是原题（2016 CCPC Changchun J），可能毛子出题人没看过国内这场，于是直接复制粘贴交了，&lt;strong&gt;71min1A&lt;/strong&gt;。G 我之前就说是大力枚举，但我不会计算几何，让 triple_a 写了，&lt;strong&gt;105min2A&lt;/strong&gt;。我们交流了一下 F 的题意，然后 triple_a 觉得他大概会写，然后他说反正是随便打打所以他有事要出门了（草）。我大力猜了一下 A 题有个结论，但是需要筛 $10^{11}$ 以内的质数个数，时间复杂度没法接受，clp012345 告诉我有一种叫作 &lt;a href=&quot;https://tanakarino.cn/2020/04/27/Meissel-Lehmer算法/&quot;&gt;Meissel-Lehmer&lt;/a&gt; 的神棍算法可以 $O(n^\frac 23)$ 求这个东西……找了个板子复制粘贴（？），然后我搞错边界，又贡献一发罚时，&lt;strong&gt;156min2A&lt;/strong&gt;。期间 clp012345 单切了 H（我题都没读……），&lt;strong&gt;167min2A&lt;/strong&gt;。&lt;del&gt;接下来我假装看 C 和 E，其实已经没思路了完全躺了。&lt;/del&gt;但他们两个还是很猛，clp012345 单切了 J，&lt;strong&gt;230min4A&lt;/strong&gt;。triple_a 回来把 F 写了，&lt;strong&gt;257min2A&lt;/strong&gt;。我跟 clp012345 说 E 题的圆其实就是竖线，他说用离散化线段树维护一下就行，&lt;strong&gt;293min4A&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;前 World Finalist 带飞果然牛逼，9 个题&lt;del&gt;，力压 dmy&lt;/del&gt;，我全程躺着被带飞。&lt;/p&gt;
+&lt;h1 id=&quot;Solution（待完善）&quot;&gt;&lt;a href=&quot;#Solution（待完善）&quot; class=&quot;headerlink&quot; title=&quot;Solution（待完善）&quot;&gt;&lt;/a&gt;Solution（待完善）&lt;/h1&gt;&lt;h2 id=&quot;Problem-A-Bags-of-Candies&quot;&gt;&lt;a href=&quot;#Problem-A-Bags-of-Candies&quot; class=&quot;headerlink&quot; title=&quot;Problem A. Bags of Candies&quot;&gt;&lt;/a&gt;Problem A. Bags of Candies&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-A/&quot;&gt;https://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-A/&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Problem-B-Binomial&quot;&gt;&lt;a href=&quot;#Problem-B-Binomial&quot; class=&quot;headerlink&quot; title=&quot;Problem B. Binomial&quot;&gt;&lt;/a&gt;Problem B. Binomial&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-B/&quot;&gt;https://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-B/&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="训练赛" scheme="http://tanakarino.cn/categories/%E8%AE%AD%E7%BB%83%E8%B5%9B/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Meissel-Lehmer算法</title>
@@ -290,29 +314,6 @@ ans_{1}(inv) = inv \cdot a&lt;/script&gt;&lt;p&gt;考虑加上第二种操作，
     
     
       <category term="Messiel-Lehmer算法" scheme="http://tanakarino.cn/tags/Messiel-Lehmer%E7%AE%97%E6%B3%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>[20200426] 2020 Petrozavodsk Winter Camp Day 5</title>
-    <link href="http://tanakarino.cn/2020/05/01/20200426-2020-Petrozavodsk-Winter-Camp-Day-5/"/>
-    <id>http://tanakarino.cn/2020/05/01/20200426-2020-Petrozavodsk-Winter-Camp-Day-5/</id>
-    <published>2020-05-01T13:48:03.000Z</published>
-    <updated>2020-06-02T10:38:36.351Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Review&quot;&gt;&lt;a href=&quot;#Review&quot; class=&quot;headerlink&quot; title=&quot;Review&quot;&gt;&lt;/a&gt;Review&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://codeforces.com/profile/triple__a&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;triple_a&lt;/a&gt; 问我和 &lt;a href=&quot;https://codeforces.com/profile/nezzar&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;clp012345&lt;/a&gt; 要不要来玩，于是我就打了&lt;del&gt;，前 World Finalist 带飞谁不爱呢&lt;/del&gt;。&lt;/p&gt;
-&lt;p&gt;因为纯属娱乐所以可能并不是全力打，不过也并没有做到同一时刻只有一个人写……总之就是图一乐吧。&lt;/p&gt;
-&lt;p&gt;刚开场的时候因为是娱乐所以他们两个也就随便开题不跟榜了，我们各自读了一下几道题。clp012345 开始猛凹 C 凹了接近两个小时&lt;del&gt;，结果是 C 最后也没过&lt;/del&gt;。我看到有人过 L 就大力 WA 了一发，发现把大于写成大于等于，&lt;strong&gt;43min2A&lt;/strong&gt;。B 题 triple_a 说只会 TLE 的枚举子集，于是 clp012345 说 Sum over Submask DP 能做，&lt;strong&gt;51min1A&lt;/strong&gt;。triple_a 又读了 I 题，说做法显然但是难写，我一看题居然是原题（2016 CCPC Changchun J），可能毛子出题人没看过国内这场，于是直接复制粘贴交了，&lt;strong&gt;71min1A&lt;/strong&gt;。G 我之前就说是大力枚举，但我不会计算几何，让 triple_a 写了，&lt;strong&gt;105min2A&lt;/strong&gt;。我们交流了一下 F 的题意，然后 triple_a 觉得他大概会写，然后他说反正是随便打打所以他有事要出门了（草）。我大力猜了一下 A 题有个结论，但是需要筛 $10^{11}$ 以内的质数个数，时间复杂度没法接受，clp012345 告诉我有一种叫作 &lt;a href=&quot;https://tanakarino.cn/2020/04/27/Meissel-Lehmer算法/&quot;&gt;Meissel-Lehmer&lt;/a&gt; 的神棍算法可以 $O(n^\frac 23)$ 求这个东西……找了个板子复制粘贴（？），然后我搞错边界，又贡献一发罚时，&lt;strong&gt;156min2A&lt;/strong&gt;。期间 clp012345 单切了 H（我题都没读……），&lt;strong&gt;167min2A&lt;/strong&gt;。&lt;del&gt;接下来我假装看 C 和 E，其实已经没思路了完全躺了。&lt;/del&gt;但他们两个还是很猛，clp012345 单切了 J，&lt;strong&gt;230min4A&lt;/strong&gt;。triple_a 回来把 F 写了，&lt;strong&gt;257min2A&lt;/strong&gt;。我跟 clp012345 说 E 题的圆其实就是竖线，他说用离散化线段树维护一下就行，&lt;strong&gt;293min4A&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;前 World Finalist 带飞果然牛逼，9 个题&lt;del&gt;，力压 dmy&lt;/del&gt;，我全程躺着被带飞。&lt;/p&gt;
-&lt;h1 id=&quot;Solution（待完善）&quot;&gt;&lt;a href=&quot;#Solution（待完善）&quot; class=&quot;headerlink&quot; title=&quot;Solution（待完善）&quot;&gt;&lt;/a&gt;Solution（待完善）&lt;/h1&gt;&lt;h2 id=&quot;Problem-A-Bags-of-Candies&quot;&gt;&lt;a href=&quot;#Problem-A-Bags-of-Candies&quot; class=&quot;headerlink&quot; title=&quot;Problem A. Bags of Candies&quot;&gt;&lt;/a&gt;Problem A. Bags of Candies&lt;/h2&gt;&lt;h2 id=&quot;Problem-B-Binomial&quot;&gt;&lt;a href=&quot;#Problem-B-Binomial&quot; class=&quot;headerlink&quot; title=&quot;Problem B. Binomial&quot;&gt;&lt;/a&gt;Problem B. Binomial&lt;/h2&gt;&lt;h2 id=&quot;Problem-C-Bookface&quot;&gt;&lt;a href=&quot;#Problem-C-Bookface&quot; class=&quot;headerlink&quot; title=&quot;Problem C. Bookface&quot;&gt;&lt;/a&gt;Problem C. Bookface&lt;/h2&gt;&lt;p&gt;大致题意：数轴上有 $n$ 个点 $a_1,a_2,\dots,a_n$，每次你可以花费 $1$ 代价使某个点向某个方向移动 $1$（但所有点必须时刻在正半轴上）。现在，希望你求出最小总代价，使得任意两点间的距离都大于等于 $d$。有 $z$ 组测试数据。&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="训练赛" scheme="http://tanakarino.cn/categories/%E8%AE%AD%E7%BB%83%E8%B5%9B/"/>
-    
     
   </entry>
   
