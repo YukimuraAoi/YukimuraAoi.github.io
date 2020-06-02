@@ -136,17 +136,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">12</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">15</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">17</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">19</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">13</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">15</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -206,6 +206,221 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://tanakarino.cn/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-H/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/aoi.jpg">
+      <meta itemprop="name" content="Nanako">
+      <meta itemprop="description" content="此般平和的日常，若是能一直持续下去就好了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nanako">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-H/" class="post-title-link" itemprop="url">2020 CCPC-Wannafly Winter Camp Day 1 H</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 22:51:00 / 修改时间：23:39:15" itemprop="dateCreated datePublished" datetime="2020-06-02T22:51:00+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">数论</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E8%AE%BA/%E6%95%B4%E9%99%A4%E4%B8%8E%E5%90%8C%E4%BD%99/" itemprop="url" rel="index"><span itemprop="name">整除与同余</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-H/" class="post-meta-item leancloud_visitors" data-flag-title="2020 CCPC-Wannafly Winter Camp Day 1 H" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-H/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-H/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Problem-H-最大公约数"><a href="#Problem-H-最大公约数" class="headerlink" title="Problem H. 最大公约数"></a>Problem H. 最大公约数</h1><h2 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h2><p>给出两个整数 $k,n$ （$1 \leq k \leq n$），求最小的 $y$，使得对于任意 $x \in [1,n]$ 且 $x \neq k$，都满足 $\gcd(x, y) \neq \gcd(k,y)$。如果不存在这样的 $y$，输出$-1$。有 $T$ 组测试数据。</p>
+<p>$1 \leq T \leq 50$</p>
+<p>$1 \leq k \leq n \leq 500$</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>不存在这样的 $y$ 当然是骗你的，因为一定存在……</p>
+<p>我在狂演 F 题的时候这题就有一些队伍过了，于是 Luowaterbi 和 owojiecao 就在看，但是没什么结论……我演完 F 之后看了一会<del>样例</del>，猜想答案就是 $k \cdot \prod_{i = 1, i \in p}^{\lfloor \frac{n}{k} \rfloor} i$，虽然不会证明但是我们三个都没想到反例，于是我就交了两发 WA，发现需要高精度，用 Java 重写，过了。</p>
+<p><del>抄了一个</del>必要性证明大概是这样的：</p>
+<ul>
+<li>必须保证 $k|y$。否则就有 $\gcd(k,y) \neq k$，又因为显然 $\gcd(k,y) = \gcd(\gcd(k,y),y)$，就不符合题意了啊。</li>
+<li>对于 $[1,\lfloor \frac nk \rfloor]$ 中的每一个质数 $p$，必须保证 $p|\frac yk$。否则就有 $\gcd(pk,y) = k \cdot \gcd(p,y/k) = k =\gcd(k,y)$，就不符合题意了啊。</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-H/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://tanakarino.cn/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/aoi.jpg">
+      <meta itemprop="name" content="Nanako">
+      <meta itemprop="description" content="此般平和的日常，若是能一直持续下去就好了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nanako">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-F/" class="post-title-link" itemprop="url">2020 CCPC-Wannafly Winter Camp Day 1 F</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 22:19:35 / 修改时间：22:42:36" itemprop="dateCreated datePublished" datetime="2020-06-02T22:19:35+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">基本算法</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88/" itemprop="url" rel="index"><span itemprop="name">二分答案</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-F/" class="post-meta-item leancloud_visitors" data-flag-title="2020 CCPC-Wannafly Winter Camp Day 1 F" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-F/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-F/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Problem-F-乘法"><a href="#Problem-F-乘法" class="headerlink" title="Problem F. 乘法"></a>Problem F. 乘法</h1><h2 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h2><p>给两个长度分别为 $n,m$ 的数列 $A, B$ 来表示一个 $n \times m$ 的矩阵 $C$（即 $C_{i,j} = A_i \cdot B_j$）。 给出整数 $K$，你需要求出 $C$ 中第 $K$ 大的数。</p>
+<p>$1 \leq n,m \leq 10^5$, $1 \leq K \leq n \times m$</p>
+<p>$-10^6 \leq A_i,B_i \leq 10^6$</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>$O(n \log m \log (\max C_{i,j} - \min C_{i,j}))$ 的做法显然吧……</p>
+<p>我们预先对每一行排好序。对于一个假定的答案 $mid$，我们可以 $O(n)$ 枚举行，对于每一行都 $O(\log m)$ 二分一下计算有多少个数大于 $mid$，就能 $O(n \log m)$ 计算 $mid$ 是第几大。又因为 $mid$ 与其位次是单调的关系，那么考虑二分答案 $mid$，就可以 $O(n \log m \log (\max C_{i,j} - \min C_{i,j}))$ 求 $K$ 大了。</p>
+<p>二分这种东西需要注意一下细节，尤其是这题还有负数和 $0$……我开场读的第一题就是这个，一眼就会了，以为有希望抢一血，结果是被 <code>lower_bound</code> 和 <code>upper_bound</code> 演了很久，调了一个小时……太丢人了……</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-F/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://tanakarino.cn/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -231,7 +446,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-06-02 18:58:21 / 修改时间：18:59:50" itemprop="dateCreated datePublished" datetime="2020-06-02T18:58:21+08:00">2020-06-02</time>
+              <time title="创建时间：2020-06-02 18:58:21 / 修改时间：19:14:01" itemprop="dateCreated datePublished" datetime="2020-06-02T18:58:21+08:00">2020-06-02</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -286,8 +501,8 @@
 <p>$1 \leq l \leq r \leq n \leq 10^9$</p>
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>考虑一张有 $n$ 个结点染上 $k$ 种颜色，每种颜色使用了 $a_i$ 次。既然只有同色是不能连边的，那么我们把除了同色的团只玩的边全部连起来。一个大小为 $x$ 的团有 $\frac{x(x+1)}2$ 条边，那么总边数应该是</p>
 <script type="math/tex; mode=display">
-\frac{n(n+1)}2 -
-\sum_{i=1}^{k} \frac{a_i(a_i+1)}2</script><p>不难发现，要最大化总边数其实也就是要最小化 $\sum_{i=1}^k a_i^2$。所以，$a_i$ 肯定是均分，即有 $n \bmod k$ 个 $a_i$ 等于 $\lfloor \frac nk \rfloor + 1$，剩下的 $k - n \bmod k$ 个 $a_i$ 等于 $\lfloor \frac nk \rfloor$。<del>所谓「大胆猜想，从不求证」。证明？问就是不会。这是学了这么多年数学的数学直觉。</del></p>
+\binom{n}{2} -
+\sum_{i=1}^{k} \binom{a_i}{2}</script><p>不难发现，要最大化总边数其实也就是要最小化 $\sum_{i=1}^k a_i^2$。所以，$a_i$ 肯定是均分，即有 $n \bmod k$ 个 $a_i$ 等于 $\lfloor \frac nk \rfloor + 1$，剩下的 $k - n \bmod k$ 个 $a_i$ 等于 $\lfloor \frac nk \rfloor$。<del>所谓「大胆猜想，从不求证」。证明？问就是不会。这是学了这么多年数学的数学直觉。</del></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-C/#more" rel="contents">
@@ -1047,214 +1262,6 @@ P_2(n, m) = \sum_{x < p \leq \sqrt n} (\pi(\frac np) - \pi(p) + 1)</script><scri
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-H/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/aoi.jpg">
-      <meta itemprop="name" content="Nanako">
-      <meta itemprop="description" content="此般平和的日常，若是能一直持续下去就好了">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nanako">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-H/" class="post-title-link" itemprop="url">2020 Petrozavodsk Winter Camp Day 5 H</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-06-02 18:07:10 / 修改时间：18:18:45" itemprop="dateCreated datePublished" datetime="2020-06-02T18:07:10+08:00">2020-06-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" itemprop="url" rel="index"><span itemprop="name">动态规划</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8C%BA%E9%97%B4DP/" itemprop="url" rel="index"><span itemprop="name">区间DP</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-H/" class="post-meta-item leancloud_visitors" data-flag-title="2020 Petrozavodsk Winter Camp Day 5 H" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-H/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-H/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Problem-H-Lighthouses"><a href="#Problem-H-Lighthouses" class="headerlink" title="Problem H. Lighthouses"></a>Problem H. Lighthouses</h1><h2 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h2><p>给一个有 $n$ 个顶点的凸多边形，其顶点用 $(x_i,y_i)$ 表示。以 $n$ 个顶点为结点，给定 $m$ 条边 $(u_i,v_i)$。希望求出图上最长的（指欧几里得距离）且不和自己相交的（几何意义上）路的长度。有 $z$ 组测试数据。</p>
-<p>$3 \leq n \leq 300$, $0 \leq m \leq \frac{n(n-1)}{2}$, $1 \leq u_i \neq v_i \leq n$</p>
-<p>$-10^9 \leq x_i, y_i \leq 10^9$</p>
-<p>$\sum n \leq 3000$</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>这题赛中我读都没读就被 clp012345 切了，赛后才看。</p>
-<p>经过观察我们发现其实合法的路只能是在环上往一个方向转，那么我们上一个区间 DP 就可以了。开三个维度，分别表示起点、终点、顺/逆时针，状态转移 $O(n)$ 枚举。时间复杂度 $O(n^3)$。</p>
-<p>区间 DP 要上环的话，通常做法就是开两倍数组复制一遍吧，参考石子合并。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-H/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-G/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/aoi.jpg">
-      <meta itemprop="name" content="Nanako">
-      <meta itemprop="description" content="此般平和的日常，若是能一直持续下去就好了">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Nanako">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-G/" class="post-title-link" itemprop="url">2020 Petrozavodsk Winter Camp Day 5 G</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-06-02 18:04:41 / 修改时间：18:19:12" itemprop="dateCreated datePublished" datetime="2020-06-02T18:04:41+08:00">2020-06-02</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/" itemprop="url" rel="index"><span itemprop="name">计算几何</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-G/" class="post-meta-item leancloud_visitors" data-flag-title="2020 Petrozavodsk Winter Camp Day 5 G" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-G/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-G/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Problem-G-Invited-Speakers"><a href="#Problem-G-Invited-Speakers" class="headerlink" title="Problem G. Invited Speakers"></a>Problem G. Invited Speakers</h1><h2 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h2><p>给定 $2n$ 个不同的点 $(x_i,y_i)$，$A$ 类型和 $B$ 类型各 $n$ 个，保证不存在三点共线。希望你能给出一种方案把它们配对成 $n$ 对 $AB$，并且每对 $AB$ 之间用折线（$[1, 100]$ 条首尾相连的线段）相连，折线之间两两不交。有 $z$ 组测试数据。</p>
-<p>$1 \leq z \leq 200$</p>
-<p>$1 \leq n \leq 6$</p>
-<p>$0 \leq |x_i|,|y_i| \leq 100$</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>我读的题，第一反应是：就这？</p>
-<p>还害我确认了好几遍题意和数据范围。</p>
-<p><del>精通脚撕 FFT 的各种姿势的</del>队友 Luowaterbi 曾经告诉我，没有三点共线的时候，两种一样多的点必然存在一种配对方案使得每对之间只用一条线段相连并且所有线段都不交。既然这题数据范围这么小，直接大力枚举配对方案，再大力枚举判断是否存在两线段交就行了。时间复杂度 $O(n!n^2)$。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-G/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1326,20 +1333,20 @@ P_2(n, m) = \sum_{x < p \leq \sqrt n} (\pi(\frac np) - \pi(p) + 1)</script><scri
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

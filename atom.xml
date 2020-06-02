@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tanakarino.cn/"/>
-  <updated>2020-06-02T10:59:50.256Z</updated>
+  <updated>2020-06-02T15:39:15.675Z</updated>
   <id>http://tanakarino.cn/</id>
   
   <author>
@@ -17,11 +17,78 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>2020 CCPC-Wannafly Winter Camp Day 1 H</title>
+    <link href="http://tanakarino.cn/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-H/"/>
+    <id>http://tanakarino.cn/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-H/</id>
+    <published>2020-06-02T14:51:00.000Z</published>
+    <updated>2020-06-02T15:39:15.675Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Problem-H-最大公约数&quot;&gt;&lt;a href=&quot;#Problem-H-最大公约数&quot; class=&quot;headerlink&quot; title=&quot;Problem H. 最大公约数&quot;&gt;&lt;/a&gt;Problem H. 最大公约数&lt;/h1&gt;&lt;h2 id=&quot;Statement&quot;&gt;&lt;a href=&quot;#Statement&quot; class=&quot;headerlink&quot; title=&quot;Statement&quot;&gt;&lt;/a&gt;Statement&lt;/h2&gt;&lt;p&gt;给出两个整数 $k,n$ （$1 \leq k \leq n$），求最小的 $y$，使得对于任意 $x \in [1,n]$ 且 $x \neq k$，都满足 $\gcd(x, y) \neq \gcd(k,y)$。如果不存在这样的 $y$，输出$-1$。有 $T$ 组测试数据。&lt;/p&gt;
+&lt;p&gt;$1 \leq T \leq 50$&lt;/p&gt;
+&lt;p&gt;$1 \leq k \leq n \leq 500$&lt;/p&gt;
+&lt;h2 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;headerlink&quot; title=&quot;Solution&quot;&gt;&lt;/a&gt;Solution&lt;/h2&gt;&lt;p&gt;不存在这样的 $y$ 当然是骗你的，因为一定存在……&lt;/p&gt;
+&lt;p&gt;我在狂演 F 题的时候这题就有一些队伍过了，于是 Luowaterbi 和 owojiecao 就在看，但是没什么结论……我演完 F 之后看了一会&lt;del&gt;样例&lt;/del&gt;，猜想答案就是 $k \cdot \prod_{i = 1, i \in p}^{\lfloor \frac{n}{k} \rfloor} i$，虽然不会证明但是我们三个都没想到反例，于是我就交了两发 WA，发现需要高精度，用 Java 重写，过了。&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;抄了一个&lt;/del&gt;必要性证明大概是这样的：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;必须保证 $k|y$。否则就有 $\gcd(k,y) \neq k$，又因为显然 $\gcd(k,y) = \gcd(\gcd(k,y),y)$，就不符合题意了啊。&lt;/li&gt;
+&lt;li&gt;对于 $[1,\lfloor \frac nk \rfloor]$ 中的每一个质数 $p$，必须保证 $p|\frac yk$。否则就有 $\gcd(pk,y) = k \cdot \gcd(p,y/k) = k =\gcd(k,y)$，就不符合题意了啊。&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+    
+      <category term="数论" scheme="http://tanakarino.cn/categories/%E6%95%B0%E8%AE%BA/"/>
+    
+      <category term="整除与同余" scheme="http://tanakarino.cn/categories/%E6%95%B0%E8%AE%BA/%E6%95%B4%E9%99%A4%E4%B8%8E%E5%90%8C%E4%BD%99/"/>
+    
+    
+      <category term="高精度" scheme="http://tanakarino.cn/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/"/>
+    
+      <category term="结论/规律" scheme="http://tanakarino.cn/tags/%E7%BB%93%E8%AE%BA-%E8%A7%84%E5%BE%8B/"/>
+    
+      <category term="欧拉筛" scheme="http://tanakarino.cn/tags/%E6%AC%A7%E6%8B%89%E7%AD%9B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020 CCPC-Wannafly Winter Camp Day 1 F</title>
+    <link href="http://tanakarino.cn/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-F/"/>
+    <id>http://tanakarino.cn/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-F/</id>
+    <published>2020-06-02T14:19:35.000Z</published>
+    <updated>2020-06-02T14:42:36.376Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Problem-F-乘法&quot;&gt;&lt;a href=&quot;#Problem-F-乘法&quot; class=&quot;headerlink&quot; title=&quot;Problem F. 乘法&quot;&gt;&lt;/a&gt;Problem F. 乘法&lt;/h1&gt;&lt;h2 id=&quot;Statement&quot;&gt;&lt;a href=&quot;#Statement&quot; class=&quot;headerlink&quot; title=&quot;Statement&quot;&gt;&lt;/a&gt;Statement&lt;/h2&gt;&lt;p&gt;给两个长度分别为 $n,m$ 的数列 $A, B$ 来表示一个 $n \times m$ 的矩阵 $C$（即 $C_{i,j} = A_i \cdot B_j$）。 给出整数 $K$，你需要求出 $C$ 中第 $K$ 大的数。&lt;/p&gt;
+&lt;p&gt;$1 \leq n,m \leq 10^5$, $1 \leq K \leq n \times m$&lt;/p&gt;
+&lt;p&gt;$-10^6 \leq A_i,B_i \leq 10^6$&lt;/p&gt;
+&lt;h2 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;headerlink&quot; title=&quot;Solution&quot;&gt;&lt;/a&gt;Solution&lt;/h2&gt;&lt;p&gt;$O(n \log m \log (\max C_{i,j} - \min C_{i,j}))$ 的做法显然吧……&lt;/p&gt;
+&lt;p&gt;我们预先对每一行排好序。对于一个假定的答案 $mid$，我们可以 $O(n)$ 枚举行，对于每一行都 $O(\log m)$ 二分一下计算有多少个数大于 $mid$，就能 $O(n \log m)$ 计算 $mid$ 是第几大。又因为 $mid$ 与其位次是单调的关系，那么考虑二分答案 $mid$，就可以 $O(n \log m \log (\max C_{i,j} - \min C_{i,j}))$ 求 $K$ 大了。&lt;/p&gt;
+&lt;p&gt;二分这种东西需要注意一下细节，尤其是这题还有负数和 $0$……我开场读的第一题就是这个，一眼就会了，以为有希望抢一血，结果是被 &lt;code&gt;lower_bound&lt;/code&gt; 和 &lt;code&gt;upper_bound&lt;/code&gt; 演了很久，调了一个小时……太丢人了……&lt;/p&gt;
+&lt;h2 id=&quot;Code&quot;&gt;&lt;a href=&quot;#Code&quot; class=&quot;headerlink&quot; title=&quot;Code&quot;&gt;&lt;/a&gt;Code&lt;/h2&gt;
+    
+    </summary>
+    
+    
+      <category term="基本算法" scheme="http://tanakarino.cn/categories/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/"/>
+    
+      <category term="二分答案" scheme="http://tanakarino.cn/categories/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88/"/>
+    
+    
+      <category term="二分答案" scheme="http://tanakarino.cn/tags/%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88/"/>
+    
+      <category term="二分" scheme="http://tanakarino.cn/tags/%E4%BA%8C%E5%88%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2020 CCPC-Wannafly Winter Camp Day 1 C</title>
     <link href="http://tanakarino.cn/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-C/"/>
     <id>http://tanakarino.cn/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-C/</id>
     <published>2020-06-02T10:58:21.000Z</published>
-    <updated>2020-06-02T10:59:50.256Z</updated>
+    <updated>2020-06-02T11:14:01.546Z</updated>
     
     <summary type="html">
     
@@ -32,8 +99,8 @@
 &lt;p&gt;$1 \leq l \leq r \leq n \leq 10^9$&lt;/p&gt;
 &lt;h2 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;headerlink&quot; title=&quot;Solution&quot;&gt;&lt;/a&gt;Solution&lt;/h2&gt;&lt;p&gt;考虑一张有 $n$ 个结点染上 $k$ 种颜色，每种颜色使用了 $a_i$ 次。既然只有同色是不能连边的，那么我们把除了同色的团只玩的边全部连起来。一个大小为 $x$ 的团有 $\frac{x(x+1)}2$ 条边，那么总边数应该是&lt;/p&gt;
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
-\frac{n(n+1)}2 -
-\sum_{i=1}^{k} \frac{a_i(a_i+1)}2&lt;/script&gt;&lt;p&gt;不难发现，要最大化总边数其实也就是要最小化 $\sum_{i=1}^k a_i^2$。所以，$a_i$ 肯定是均分，即有 $n \bmod k$ 个 $a_i$ 等于 $\lfloor \frac nk \rfloor + 1$，剩下的 $k - n \bmod k$ 个 $a_i$ 等于 $\lfloor \frac nk \rfloor$。&lt;del&gt;所谓「大胆猜想，从不求证」。证明？问就是不会。这是学了这么多年数学的数学直觉。&lt;/del&gt;&lt;/p&gt;
+\binom{n}{2} -
+\sum_{i=1}^{k} \binom{a_i}{2}&lt;/script&gt;&lt;p&gt;不难发现，要最大化总边数其实也就是要最小化 $\sum_{i=1}^k a_i^2$。所以，$a_i$ 肯定是均分，即有 $n \bmod k$ 个 $a_i$ 等于 $\lfloor \frac nk \rfloor + 1$，剩下的 $k - n \bmod k$ 个 $a_i$ 等于 $\lfloor \frac nk \rfloor$。&lt;del&gt;所谓「大胆猜想，从不求证」。证明？问就是不会。这是学了这么多年数学的数学直觉。&lt;/del&gt;&lt;/p&gt;
     
     </summary>
     
