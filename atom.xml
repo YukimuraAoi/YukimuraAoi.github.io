@@ -293,7 +293,7 @@ ans_{1}(inv) = inv \cdot a&lt;/script&gt;&lt;p&gt;考虑加上第二种操作，
     <link href="http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-A/"/>
     <id>http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-A/</id>
     <published>2020-06-02T09:46:06.000Z</published>
-    <updated>2020-06-02T10:20:32.005Z</updated>
+    <updated>2020-06-02T10:47:56.782Z</updated>
     
     <summary type="html">
     
@@ -313,7 +313,7 @@ ans_{1}(inv) = inv \cdot a&lt;/script&gt;&lt;p&gt;考虑加上第二种操作，
       <category term="整除与同余" scheme="http://tanakarino.cn/categories/%E6%95%B0%E8%AE%BA/%E6%95%B4%E9%99%A4%E4%B8%8E%E5%90%8C%E4%BD%99/"/>
     
     
-      <category term="Messiel-Lehmer算法" scheme="http://tanakarino.cn/tags/Messiel-Lehmer%E7%AE%97%E6%B3%95/"/>
+      <category term="Meissel-Lehmer算法" scheme="http://tanakarino.cn/tags/Meissel-Lehmer%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
