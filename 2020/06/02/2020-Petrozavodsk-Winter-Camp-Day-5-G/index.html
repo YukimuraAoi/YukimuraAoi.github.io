@@ -20,17 +20,20 @@
     var CONFIG = {"hostname":"tanakarino.cn","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="此般平和的日常，若是能一直持续下去就好了">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Nanako">
-<meta property="og:url" content="http://tanakarino.cn/categories/%E6%AF%94%E8%B5%9B/index.html">
+  <meta name="description" content="Problem G. Invited SpeakersStatement给定 $2n$ 个不同的点 $(x_i,y_i)$，$A$ 类型和 $B$ 类型各 $n$ 个，保证不存在三点共线。希望你能给出一种方案把它们配对成 $n$ 对 $AB$，并且每对 $AB$ 之间用折线（$[1, 100]$ 条首尾相连的线段）相连，折线之间两两不交。有 $z$ 组测试数据。 $1 \leq z \leq 20">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2020 Petrozavodsk Winter Camp Day 5 G">
+<meta property="og:url" content="http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-G/index.html">
 <meta property="og:site_name" content="Nanako">
-<meta property="og:description" content="此般平和的日常，若是能一直持续下去就好了">
+<meta property="og:description" content="Problem G. Invited SpeakersStatement给定 $2n$ 个不同的点 $(x_i,y_i)$，$A$ 类型和 $B$ 类型各 $n$ 个，保证不存在三点共线。希望你能给出一种方案把它们配对成 $n$ 对 $AB$，并且每对 $AB$ 之间用折线（$[1, 100]$ 条首尾相连的线段）相连，折线之间两两不交。有 $z$ 组测试数据。 $1 \leq z \leq 20">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-02T10:04:41.000Z">
+<meta property="article:modified_time" content="2020-06-02T10:19:12.918Z">
 <meta property="article:author" content="Nanako">
+<meta property="article:tag" content="计算几何">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://tanakarino.cn/categories/%E6%AF%94%E8%B5%9B/">
+<link rel="canonical" href="http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-G/">
 
 
 <script id="page-configurations">
@@ -38,7 +41,7 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
@@ -55,7 +58,7 @@
 	POWERMODE.shake = false;
 	document.body.addEventListener('input',POWERMODE);
 </script>
-  <title>分类: 比赛 | Nanako</title>
+  <title>2020 Petrozavodsk Winter Camp Day 5 G | Nanako</title>
   
 
 
@@ -200,57 +203,148 @@
         <div class="content-wrap">
           
 
-          <div class="content category">
+          <div class="content post posts-expand">
             
 
+    
   
   
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-G/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/aoi.jpg">
+      <meta itemprop="name" content="Nanako">
+      <meta itemprop="description" content="此般平和的日常，若是能一直持续下去就好了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nanako">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2020 Petrozavodsk Winter Camp Day 5 G
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 18:04:41 / 修改时间：18:19:12" itemprop="dateCreated datePublished" datetime="2020-06-02T18:04:41+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/" itemprop="url" rel="index"><span itemprop="name">计算几何</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-G/" class="post-meta-item leancloud_visitors" data-flag-title="2020 Petrozavodsk Winter Camp Day 5 G" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
   
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">比赛
-          <small>分类</small>
-        </h2>
-      </div>
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-G/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-G/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <h1 id="Problem-G-Invited-Speakers"><a href="#Problem-G-Invited-Speakers" class="headerlink" title="Problem G. Invited Speakers"></a>Problem G. Invited Speakers</h1><h2 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h2><p>给定 $2n$ 个不同的点 $(x_i,y_i)$，$A$ 类型和 $B$ 类型各 $n$ 个，保证不存在三点共线。希望你能给出一种方案把它们配对成 $n$ 对 $AB$，并且每对 $AB$ 之间用折线（$[1, 100]$ 条首尾相连的线段）相连，折线之间两两不交。有 $z$ 组测试数据。</p>
+<p>$1 \leq z \leq 200$</p>
+<p>$1 \leq n \leq 6$</p>
+<p>$0 \leq |x_i|,|y_i| \leq 100$</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>我读的题，第一反应是：就这？</p>
+<p>还害我确认了好几遍题意和数据范围。</p>
+<p><del>精通脚撕 FFT 的各种姿势的</del>队友 Luowaterbi 曾经告诉我，没有三点共线的时候，两种一样多的点必然存在一种配对方案使得每对之间只用一条线段相连并且所有线段都不交。既然这题数据范围这么小，直接大力枚举配对方案，再大力枚举判断是否存在两线段交就行了。时间复杂度 $O(n!n^2)$。</p>
+<p>由于我计算几何过于垃圾不想写，我就交给 triple_a 写了。triple_a 写得也很有意思，没用到计算几何的线段交判定，直接 $O(n!n)$ 取所有线段长度之和最小的方案，而这其实就是所有线段都不交的那个方案。</p>
+<p>官方题解是个构造，懒得看具体折线怎么画了，反正意义不大，出题人可能是没想到有结论。</p>
+<h2 id="Code-By-triple-a"><a href="#Code-By-triple-a" class="headerlink" title="Code (By triple_a)"></a>Code (By triple_a)</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">int</span> t,n;</span><br><span class="line"><span class="keyword">int</span> p[<span class="number">7</span>],res[<span class="number">7</span>];</span><br><span class="line">pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; a[<span class="number">7</span>],b[<span class="number">7</span>];</span><br><span class="line"><span class="keyword">double</span> dist;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">    <span class="keyword">while</span> (t--)&#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;a[i].first&gt;&gt;a[i].second;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;b[i].first&gt;&gt;b[i].second;</span><br><span class="line">        &#125;</span><br><span class="line">        dist=<span class="number">1e9</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">            p[i]=i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">auto</span> f=[&amp;](pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;u, pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; v)&#123;</span><br><span class="line">            <span class="keyword">return</span> (u.first-v.first)*(u.first-v.first)+(u.second-v.second)*(u.second-v.second);</span><br><span class="line">        &#125;;</span><br><span class="line">        <span class="keyword">do</span>&#123;</span><br><span class="line">            <span class="keyword">double</span> sum=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">                sum+=<span class="built_in">sqrt</span>(f(a[i],b[p[i]]));</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (sum&lt;dist)&#123;</span><br><span class="line">                dist=sum;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">                    res[i]=p[i];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">while</span>(next_permutation(p,p+n));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;++i)&#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;<span class="number">2</span>&lt;&lt;<span class="string">" "</span>&lt;&lt;a[i].first&lt;&lt;<span class="string">" "</span>&lt;&lt;a[i].second&lt;&lt;<span class="string">" "</span>&lt;&lt;b[res[i]].first&lt;&lt;<span class="string">" "</span>&lt;&lt;b[res[i]].second&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+        
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-05-01T21:48:03+08:00"
-              content="2020-05-01">
-          05-01
-        </time>
-      </div>
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2020/05/01/20200426-2020-Petrozavodsk-Winter-Camp-Day-5/" itemprop="url">
-            <span itemprop="name">[20200426] 2020 Petrozavodsk Winter Camp Day 5</span>
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
           </a>
-      </div>
-
-    </header>
-  </article>
-
+        </div>
     </div>
   </div>
-  
-  
-  
 
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/" rel="tag"># 计算几何</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-F/" rel="prev" title="2020 Petrozavodsk Winter Camp Day 5 F">
+      <i class="fa fa-chevron-left"></i> 2020 Petrozavodsk Winter Camp Day 5 F
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-H/" rel="next" title="2020 Petrozavodsk Winter Camp Day 5 H">
+      2020 Petrozavodsk Winter Camp Day 5 H <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
 
           </div>
           
+    <div class="comments" id="valine-comments"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -297,6 +391,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Problem-G-Invited-Speakers"><span class="nav-text">Problem G. Invited Speakers</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Statement"><span class="nav-text">Statement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solution"><span class="nav-text">Solution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code-By-triple-a"><span class="nav-text">Code (By triple_a)</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -312,15 +407,21 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
 </div>

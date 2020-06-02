@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tanakarino.cn/"/>
-  <updated>2020-05-27T17:59:47.863Z</updated>
+  <updated>2020-06-02T10:23:21.328Z</updated>
   <id>http://tanakarino.cn/</id>
   
   <author>
@@ -17,29 +17,262 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>[20200426] 2020 Petrozavodsk Winter Camp Day 5</title>
-    <link href="http://tanakarino.cn/2020/05/01/20200426-2020-Petrozavodsk-Winter-Camp-Day-5/"/>
-    <id>http://tanakarino.cn/2020/05/01/20200426-2020-Petrozavodsk-Winter-Camp-Day-5/</id>
-    <published>2020-05-01T13:48:03.000Z</published>
-    <updated>2020-05-27T17:59:47.863Z</updated>
+    <title>2020 Petrozavodsk Winter Camp Day 5 L</title>
+    <link href="http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-L/"/>
+    <id>http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-L/</id>
+    <published>2020-06-02T10:21:19.000Z</published>
+    <updated>2020-06-02T10:23:21.328Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;a href=&quot;https://codeforces.com/profile/triple__a&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;triple_a&lt;/a&gt; 问我和 &lt;a href=&quot;https://codeforces.com/profile/nezzar&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;clp012345&lt;/a&gt; 要不要来玩，于是我就打了&lt;del&gt;，前 World Finalist 带飞谁不爱呢&lt;/del&gt;。&lt;/p&gt;
-&lt;p&gt;因为纯属娱乐所以可能并不是全力打，不过也并没有做到同一时刻只有一个人写……总之就是图一乐吧。&lt;/p&gt;
-&lt;p&gt;刚开场的时候因为是娱乐所以他们两个也就随便开题不跟榜了，我们各自读了一下几道题。clp012345 开始猛凹 C 凹了接近两个小时&lt;del&gt;，结果是 C 最后也没过&lt;/del&gt;。我看到有人过 L 就大力 WA 了一发，发现把大于写成大于等于，&lt;strong&gt;43min2A&lt;/strong&gt;。B 题 triple_a 说只会 TLE 的枚举子集，于是 clp012345 说 Sum over Submask DP 能做，&lt;strong&gt;51min1A&lt;/strong&gt;。triple_a 又读了 I 题，说做法显然但是难写，我一看题居然是原题（2016 CCPC Changchun J），可能毛子出题人没看过国内这场，于是直接复制粘贴交了，&lt;strong&gt;71min1A&lt;/strong&gt;。G 我之前就说是大力枚举，但我不会计算几何，让 triple_a 写了，&lt;strong&gt;105min2A&lt;/strong&gt;。我们交流了一下 F 的题意，然后 triple_a 觉得他大概会写，然后他说反正是随便打打所以他有事要出门了（草）。我大力猜了一下 A 题有个结论，但是需要筛 $10^{11}$ 以内的质数个数，时间复杂度没法接受，clp012345 告诉我有一种叫作 &lt;a href=&quot;https://tanakarino.cn/2020/04/27/Meissel-Lehmer算法/&quot;&gt;Meissel-Lehmer&lt;/a&gt; 的神棍算法可以 $O(n^\frac 23)$ 求这个东西……找了个板子复制粘贴（？），然后我搞错边界，又贡献一发罚时，&lt;strong&gt;156min2A&lt;/strong&gt;。期间 clp012345 单切了 H（我题都没读……），&lt;strong&gt;167min2A&lt;/strong&gt;。&lt;del&gt;接下来我假装看 C 和 E，其实已经没思路了完全躺了。&lt;/del&gt;但他们两个还是很猛，clp012345 单切了 J，&lt;strong&gt;230min4A&lt;/strong&gt;。triple_a 回来把 F 写了，&lt;strong&gt;257min2A&lt;/strong&gt;。我跟 clp012345 说 E 题的圆其实就是竖线，他说用离散化线段树维护一下就行，&lt;strong&gt;293min4A&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;前 World Finalist 带飞果然牛逼，9 个题&lt;del&gt;，力压 dmy&lt;/del&gt;，我全程躺着被带飞。&lt;/p&gt;
-&lt;h1 id=&quot;部分题解（待完善）&quot;&gt;&lt;a href=&quot;#部分题解（待完善）&quot; class=&quot;headerlink&quot; title=&quot;部分题解（待完善）&quot;&gt;&lt;/a&gt;部分题解（待完善）&lt;/h1&gt;&lt;h2 id=&quot;Problem-A-Bags-of-Candies&quot;&gt;&lt;a href=&quot;#Problem-A-Bags-of-Candies&quot; class=&quot;headerlink&quot; title=&quot;Problem A. Bags of Candies&quot;&gt;&lt;/a&gt;Problem A. Bags of Candies&lt;/h2&gt;&lt;p&gt;大致题意：把 $A = \{1,2,\dots,n\}$ 分成尽可能多对，使得每一对的两个数都不互质，问最大可能的对数。有 $z$ 组测试数据。&lt;/p&gt;
-&lt;p&gt;$1 \leq z \leq 5$&lt;/p&gt;
-&lt;p&gt;$2 \leq n \leq 10^{11}$&lt;/p&gt;
-&lt;h3 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;headerlink&quot; title=&quot;Solution&quot;&gt;&lt;/a&gt;Solution&lt;/h3&gt;
+      &lt;h1 id=&quot;Problem-L-Wizards-Unite&quot;&gt;&lt;a href=&quot;#Problem-L-Wizards-Unite&quot; class=&quot;headerlink&quot; title=&quot;Problem L. Wizards Unite&quot;&gt;&lt;/a&gt;Problem L. Wizards Unite&lt;/h1&gt;&lt;h2 id=&quot;Statement&quot;&gt;&lt;a href=&quot;#Statement&quot; class=&quot;headerlink&quot; title=&quot;Statement&quot;&gt;&lt;/a&gt;Statement&lt;/h2&gt;&lt;p&gt;给 $1$ 把金钥匙（可多次使用的钥匙），$k$ 把银钥匙（只能用一次）。给 $n$ 个箱子，每个箱子有一个打开所需时间 $t_i$（跟钥匙类型无关）。一把钥匙同时只能开一个箱子，问打开所有箱子所需的最小总时间。有 $z$ 组测试数据。&lt;/p&gt;
+&lt;p&gt;$0 \leq k &amp;lt; n \leq 10^5$&lt;/p&gt;
+&lt;p&gt;$0 \leq t_i \leq 10^9$&lt;/p&gt;
+&lt;p&gt;$\sum n \leq 10^6$&lt;/p&gt;
+&lt;h2 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;headerlink&quot; title=&quot;Solution&quot;&gt;&lt;/a&gt;Solution&lt;/h2&gt;&lt;p&gt;本场最简单的题。&lt;/p&gt;
+&lt;p&gt;不失一般性，我们认为所有箱子按 $t_i$ 排升序。显然方案只能是 $k$ 把银钥匙都用来开一个箱子，金钥匙开其他所有箱子，而答案就是以下两者中的较大值：用银钥匙的箱子中耗时最长的一个的耗时；金钥匙开其他所有箱子的耗时之和。&lt;/p&gt;
+&lt;p&gt;注意到答案无论如何也不可能小于 $t_n$，也就是说用银钥匙开 $t_n$ 箱子一定不会浪费时间。那么为了令金钥匙耗时之和尽可能小，实际上 $k$ 把银钥匙开的就是最右边的 $k$ 个箱子，于是答案就很显然了。时间复杂度 $O(n \log n)$。&lt;/p&gt;
     
     </summary>
     
     
-      <category term="比赛" scheme="http://tanakarino.cn/categories/%E6%AF%94%E8%B5%9B/"/>
+      <category term="结论/规律" scheme="http://tanakarino.cn/categories/%E7%BB%93%E8%AE%BA-%E8%A7%84%E5%BE%8B/"/>
     
-      <category term="训练赛" scheme="http://tanakarino.cn/categories/%E6%AF%94%E8%B5%9B/%E8%AE%AD%E7%BB%83%E8%B5%9B/"/>
+    
+      <category term="结论/规律" scheme="http://tanakarino.cn/tags/%E7%BB%93%E8%AE%BA-%E8%A7%84%E5%BE%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020 Petrozavodsk Winter Camp Day 5 J</title>
+    <link href="http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-J/"/>
+    <id>http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-J/</id>
+    <published>2020-06-02T10:14:35.000Z</published>
+    <updated>2020-06-02T10:16:51.608Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Problem-J-Space-Gophers&quot;&gt;&lt;a href=&quot;#Problem-J-Space-Gophers&quot; class=&quot;headerlink&quot; title=&quot;Problem J. Space Gophers&quot;&gt;&lt;/a&gt;Problem J. Space Gophers&lt;/h1&gt;&lt;h2 id=&quot;Statement&quot;&gt;&lt;a href=&quot;#Statement&quot; class=&quot;headerlink&quot; title=&quot;Statement&quot;&gt;&lt;/a&gt;Statement&lt;/h2&gt;&lt;p&gt;有一个由边长为 $1$ 的小正方体组成的边长为 $10^6$ 的实心正方体。在其中挖 $n$ 条隧道，每条隧道用 $(-,y_i,z_i)$ 或 $(x_i,-,z_i)$ 或 $(x_i,y_i,-)$ 表示。挖隧道的含义是，指定其中两个维度的坐标，沿平行于另一个维度轴线的方向把 $10^6$ 个方块拿走。挖完 $n$ 条隧道之后，$q$ 次询问两个点 $(s_x,s_y,s_z)$ 和 $(t_x,t_y,t_z)$ 是否可以通过若干条隧道连通。保证 $s$ 和 $t$ 处于隧道中。有 $z$ 组测试数据。&lt;/p&gt;
+&lt;p&gt;$1 \leq z \leq 6$&lt;/p&gt;
+&lt;p&gt;$1 \leq n \leq 3 \times 10^5$, $1 \leq x_i,y_i,z_i \leq 10^6$&lt;/p&gt;
+&lt;p&gt;$1 \leq q \leq 5 \times 10^5$, $1 \leq s_x,s_y,s_z,t_x,t_y,t_z \leq 10^6$&lt;/p&gt;
+&lt;h2 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;headerlink&quot; title=&quot;Solution&quot;&gt;&lt;/a&gt;Solution&lt;/h2&gt;&lt;p&gt;clp 单切之前大致跟我讲了一下做法。实际上两条隧道连通 iff 某一个维度坐标相等或相差 1，于是我们要做的事情就是把所有这样的隧道对找出来，在并查集上 merge 起来。&lt;/p&gt;
+&lt;p&gt;这个东西说起来简单，实现起来就比较呕吐……具体还是看代码吧……&lt;del&gt;似乎是这篇文章里最长的代码&lt;/del&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Code-By-clp012345&quot;&gt;&lt;a href=&quot;#Code-By-clp012345&quot; class=&quot;headerlink&quot; title=&quot;Code (By clp012345)&quot;&gt;&lt;/a&gt;Code (By clp012345)&lt;/h2&gt;
+    
+    </summary>
+    
+    
+      <category term="数据结构" scheme="http://tanakarino.cn/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="并查集" scheme="http://tanakarino.cn/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+    
+    
+      <category term="并查集" scheme="http://tanakarino.cn/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020 Petrozavodsk Winter Camp Day 5 I</title>
+    <link href="http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-I/"/>
+    <id>http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-I/</id>
+    <published>2020-06-02T10:11:12.000Z</published>
+    <updated>2020-06-02T10:18:22.867Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Problem-I-Sum-of-Palindromes&quot;&gt;&lt;a href=&quot;#Problem-I-Sum-of-Palindromes&quot; class=&quot;headerlink&quot; title=&quot;Problem I. Sum of Palindromes&quot;&gt;&lt;/a&gt;Problem I. Sum of Palindromes&lt;/h1&gt;&lt;h2 id=&quot;Statement&quot;&gt;&lt;a href=&quot;#Statement&quot; class=&quot;headerlink&quot; title=&quot;Statement&quot;&gt;&lt;/a&gt;Statement&lt;/h2&gt;&lt;p&gt;把给定的 $n$ 位数分解成不超过 $25$ 个回文数（不允许前导零）。有 $z$ 组测试数据。&lt;/p&gt;
+&lt;p&gt;$1 \leq z \leq 20000$&lt;/p&gt;
+&lt;p&gt;$1 \leq n \leq 10^5$&lt;/p&gt;
+&lt;p&gt;$\sum n \leq 3 \times 10^6$&lt;/p&gt;
+&lt;h2 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;headerlink&quot; title=&quot;Solution&quot;&gt;&lt;/a&gt;Solution&lt;/h2&gt;&lt;p&gt;跟国内比赛撞车了（2016 CCPC Changchun J），可能这些毛子出题人没怎么看国内比赛的题。&lt;/p&gt;
+&lt;p&gt;做法很简单，就是每次减掉小于当前数的最大的回文数。很显然每次可以减掉一半的长度，所以大概只需要 $\log n$ 次就够了。唯一的难点在于实现有点恶心，需要上高精度，不过我直接复制以前打 16 长春时候的代码了。（那个时候写得很丑不要骂我呜呜呜）&lt;/p&gt;
+&lt;h2 id=&quot;Code-By-Nanako&quot;&gt;&lt;a href=&quot;#Code-By-Nanako&quot; class=&quot;headerlink&quot; title=&quot;Code (By Nanako)&quot;&gt;&lt;/a&gt;Code (By Nanako)&lt;/h2&gt;
+    
+    </summary>
+    
+    
+      <category term="高精度" scheme="http://tanakarino.cn/categories/%E9%AB%98%E7%B2%BE%E5%BA%A6/"/>
+    
+    
+      <category term="高精度" scheme="http://tanakarino.cn/tags/%E9%AB%98%E7%B2%BE%E5%BA%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020 Petrozavodsk Winter Camp Day 5 H</title>
+    <link href="http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-H/"/>
+    <id>http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-H/</id>
+    <published>2020-06-02T10:07:10.000Z</published>
+    <updated>2020-06-02T10:18:45.548Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Problem-H-Lighthouses&quot;&gt;&lt;a href=&quot;#Problem-H-Lighthouses&quot; class=&quot;headerlink&quot; title=&quot;Problem H. Lighthouses&quot;&gt;&lt;/a&gt;Problem H. Lighthouses&lt;/h1&gt;&lt;h2 id=&quot;Statement&quot;&gt;&lt;a href=&quot;#Statement&quot; class=&quot;headerlink&quot; title=&quot;Statement&quot;&gt;&lt;/a&gt;Statement&lt;/h2&gt;&lt;p&gt;给一个有 $n$ 个顶点的凸多边形，其顶点用 $(x_i,y_i)$ 表示。以 $n$ 个顶点为结点，给定 $m$ 条边 $(u_i,v_i)$。希望求出图上最长的（指欧几里得距离）且不和自己相交的（几何意义上）路的长度。有 $z$ 组测试数据。&lt;/p&gt;
+&lt;p&gt;$3 \leq n \leq 300$, $0 \leq m \leq \frac{n(n-1)}{2}$, $1 \leq u_i \neq v_i \leq n$&lt;/p&gt;
+&lt;p&gt;$-10^9 \leq x_i, y_i \leq 10^9$&lt;/p&gt;
+&lt;p&gt;$\sum n \leq 3000$&lt;/p&gt;
+&lt;h2 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;headerlink&quot; title=&quot;Solution&quot;&gt;&lt;/a&gt;Solution&lt;/h2&gt;&lt;p&gt;这题赛中我读都没读就被 clp012345 切了，赛后才看。&lt;/p&gt;
+&lt;p&gt;经过观察我们发现其实合法的路只能是在环上往一个方向转，那么我们上一个区间 DP 就可以了。开三个维度，分别表示起点、终点、顺/逆时针，状态转移 $O(n)$ 枚举。时间复杂度 $O(n^3)$。&lt;/p&gt;
+&lt;p&gt;区间 DP 要上环的话，通常做法就是开两倍数组复制一遍吧，参考石子合并。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="动态规划" scheme="http://tanakarino.cn/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
+    
+      <category term="区间DP" scheme="http://tanakarino.cn/categories/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/%E5%8C%BA%E9%97%B4DP/"/>
+    
+    
+      <category term="区间dp" scheme="http://tanakarino.cn/tags/%E5%8C%BA%E9%97%B4dp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020 Petrozavodsk Winter Camp Day 5 G</title>
+    <link href="http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-G/"/>
+    <id>http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-G/</id>
+    <published>2020-06-02T10:04:41.000Z</published>
+    <updated>2020-06-02T10:19:12.918Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Problem-G-Invited-Speakers&quot;&gt;&lt;a href=&quot;#Problem-G-Invited-Speakers&quot; class=&quot;headerlink&quot; title=&quot;Problem G. Invited Speakers&quot;&gt;&lt;/a&gt;Problem G. Invited Speakers&lt;/h1&gt;&lt;h2 id=&quot;Statement&quot;&gt;&lt;a href=&quot;#Statement&quot; class=&quot;headerlink&quot; title=&quot;Statement&quot;&gt;&lt;/a&gt;Statement&lt;/h2&gt;&lt;p&gt;给定 $2n$ 个不同的点 $(x_i,y_i)$，$A$ 类型和 $B$ 类型各 $n$ 个，保证不存在三点共线。希望你能给出一种方案把它们配对成 $n$ 对 $AB$，并且每对 $AB$ 之间用折线（$[1, 100]$ 条首尾相连的线段）相连，折线之间两两不交。有 $z$ 组测试数据。&lt;/p&gt;
+&lt;p&gt;$1 \leq z \leq 200$&lt;/p&gt;
+&lt;p&gt;$1 \leq n \leq 6$&lt;/p&gt;
+&lt;p&gt;$0 \leq |x_i|,|y_i| \leq 100$&lt;/p&gt;
+&lt;h2 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;headerlink&quot; title=&quot;Solution&quot;&gt;&lt;/a&gt;Solution&lt;/h2&gt;&lt;p&gt;我读的题，第一反应是：就这？&lt;/p&gt;
+&lt;p&gt;还害我确认了好几遍题意和数据范围。&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;精通脚撕 FFT 的各种姿势的&lt;/del&gt;队友 Luowaterbi 曾经告诉我，没有三点共线的时候，两种一样多的点必然存在一种配对方案使得每对之间只用一条线段相连并且所有线段都不交。既然这题数据范围这么小，直接大力枚举配对方案，再大力枚举判断是否存在两线段交就行了。时间复杂度 $O(n!n^2)$。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="计算几何" scheme="http://tanakarino.cn/categories/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/"/>
+    
+    
+      <category term="计算几何" scheme="http://tanakarino.cn/tags/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020 Petrozavodsk Winter Camp Day 5 F</title>
+    <link href="http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-F/"/>
+    <id>http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-F/</id>
+    <published>2020-06-02T09:57:10.000Z</published>
+    <updated>2020-06-02T10:19:42.090Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Problem-F-The-Halfwitters&quot;&gt;&lt;a href=&quot;#Problem-F-The-Halfwitters&quot; class=&quot;headerlink&quot; title=&quot;Problem F. The Halfwitters&quot;&gt;&lt;/a&gt;Problem F. The Halfwitters&lt;/h1&gt;&lt;h2 id=&quot;Statement&quot;&gt;&lt;a href=&quot;#Statement&quot; class=&quot;headerlink&quot; title=&quot;Statement&quot;&gt;&lt;/a&gt;Statement&lt;/h2&gt;&lt;p&gt;给定长度 $n$，给定 $a, b, c$，给 $d$ 次询问。每次询问是一个长度为 $n$ 的排列，你可以对这个票列做三种操作：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;花费 $a$ 代价，交换相邻的两个数；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;花费 $b$ 代价，翻转这个排列；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;花费 $c$ 代价，shuffle 这个排列。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;对于每次询问，你需要求出，在最优的操作策略下，把排列排成升序所需的最小期望代价。有 $z$ 组测试数据。&lt;/p&gt;
+&lt;p&gt;$2 \leq n \leq 16$, $1 \leq a, b, c \leq 1000$, $1 \leq d \leq 10000$&lt;/p&gt;
+&lt;p&gt; $\sum d \leq 10^5$&lt;/p&gt;
+&lt;h2 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;headerlink&quot; title=&quot;Solution&quot;&gt;&lt;/a&gt;Solution&lt;/h2&gt;&lt;p&gt;考虑只有第一种操作，我们不难发现，总代价只跟逆序对数 $inv$ 有关。&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+ans_{1}(inv) = inv \cdot a&lt;/script&gt;&lt;p&gt;考虑加上第二种操作，我们不难发现，先翻转一下再只进行以上操作可能会更快！&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="数学" scheme="http://tanakarino.cn/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+      <category term="概率与期望" scheme="http://tanakarino.cn/categories/%E6%95%B0%E5%AD%A6/%E6%A6%82%E7%8E%87%E4%B8%8E%E6%9C%9F%E6%9C%9B/"/>
+    
+    
+      <category term="dp" scheme="http://tanakarino.cn/tags/dp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020 Petrozavodsk Winter Camp Day 5 B</title>
+    <link href="http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-B/"/>
+    <id>http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-B/</id>
+    <published>2020-06-02T09:51:19.000Z</published>
+    <updated>2020-06-02T10:20:11.602Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Problem-B-Binomial&quot;&gt;&lt;a href=&quot;#Problem-B-Binomial&quot; class=&quot;headerlink&quot; title=&quot;Problem B. Binomial&quot;&gt;&lt;/a&gt;Problem B. Binomial&lt;/h1&gt;&lt;h2 id=&quot;Statement&quot;&gt;&lt;a href=&quot;#Statement&quot; class=&quot;headerlink&quot; title=&quot;Statement&quot;&gt;&lt;/a&gt;Statement&lt;/h2&gt;&lt;p&gt;给定序列 $a_1,a_2,\dots, a_n$，问有多少对 $(a_i,a_j)$ 满足 $\binom{a_i}{a_j} \bmod 2 = 1$ 。有 $z$ 组测试数据。&lt;/p&gt;
+&lt;p&gt;$1 \leq z \leq 10$&lt;/p&gt;
+&lt;p&gt;$1 \leq n \leq 10^6$, $1 \leq a_i \leq 10^6$&lt;/p&gt;
+&lt;h2 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;headerlink&quot; title=&quot;Solution&quot;&gt;&lt;/a&gt;Solution&lt;/h2&gt;&lt;p&gt;Lucas 定理有一个经典的推论：&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\binom{a_i}{a_j} \bmod 2 = 1 \leftrightarrow a_i \&amp; a_j = a_j&lt;/script&gt;&lt;p&gt;因此，问题转化为求&lt;/p&gt;
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;
+\sum_{i=1}^{n} \sum_{j=1}^{n} [a_i \&amp; a_j = a_j]&lt;/script&gt;&lt;p&gt;记 $m = \lceil \log (\max a_i) \rceil$。显然，暴力枚举可以做到 $O(n^2)$ 的复杂度。优化一下，枚举子集可以做到 $O(3^m)$ 的复杂度。但是要通过这题还是不够。clp012345 说可以 &lt;a href=&quot;https://codeforces.com/blog/entry/45223&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Sum over Submask DP&lt;/a&gt; 做到 $O(m2^m)$，于是 triple_a 就现学现用写了一个。&lt;/p&gt;
+&lt;p&gt;这个算法本身就不讲了，可以看上面链接的文章。在国内，这个算法一般被称作快速莫比乌斯变换 (FMT) 或者子集和变换，英文不好的话也可以搜这两个词，但感觉其实大部分文章都写得对新手不是很友好。个人觉得可以看&lt;a href=&quot;http://blog.leanote.com/post/rockdu/TX20&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;这篇&lt;/a&gt;，我觉得下面这张插图真的把 FMT 解释得非常清楚。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="数论" scheme="http://tanakarino.cn/categories/%E6%95%B0%E8%AE%BA/"/>
+    
+      <category term="FMT/FWT" scheme="http://tanakarino.cn/categories/%E6%95%B0%E8%AE%BA/FMT-FWT/"/>
+    
+    
+      <category term="Lucas定理" scheme="http://tanakarino.cn/tags/Lucas%E5%AE%9A%E7%90%86/"/>
+    
+      <category term="FMT/FWT" scheme="http://tanakarino.cn/tags/FMT-FWT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2020 Petrozavodsk Winter Camp Day 5 A</title>
+    <link href="http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-A/"/>
+    <id>http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-A/</id>
+    <published>2020-06-02T09:46:06.000Z</published>
+    <updated>2020-06-02T10:20:32.005Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Problem-A-Bags-of-Candies&quot;&gt;&lt;a href=&quot;#Problem-A-Bags-of-Candies&quot; class=&quot;headerlink&quot; title=&quot;Problem A. Bags of Candies&quot;&gt;&lt;/a&gt;Problem A. Bags of Candies&lt;/h1&gt;&lt;h2 id=&quot;Statement&quot;&gt;&lt;a href=&quot;#Statement&quot; class=&quot;headerlink&quot; title=&quot;Statement&quot;&gt;&lt;/a&gt;Statement&lt;/h2&gt;&lt;p&gt;把 $A = \{1,2,\dots,n\}$ 分成尽可能多对，使得每一对的两个数都不互质，问最大可能的对数。有 $z$ 组测试数据。&lt;/p&gt;
+&lt;p&gt;$1 \leq z \leq 5$&lt;/p&gt;
+&lt;p&gt;$2 \leq n \leq 10^{11}$&lt;/p&gt;
+&lt;h2 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;headerlink&quot; title=&quot;Solution&quot;&gt;&lt;/a&gt;Solution&lt;/h2&gt;&lt;p&gt;半场的时候动这个题的队伍只有个位数。可能大家都觉得有别的题可做，不像我这么菜别的都不会就来瞎猜结论了啊。于是结论就是，将 $1$ 和大于 $\frac n2$ 的质数从 $A$ 里删掉，剩下的集合 $A’$ 一定是可以匹配满的，所以答案就是 $\frac {|A’|}2$。&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;赛中是瞎猜的，&lt;/del&gt;这里给一个简单证明。&lt;/p&gt;
+&lt;p&gt;将 $A’$ 的所有元素按最大质因子 $d$ 分组，那么每组都可以表示成 $A_d = \{d,2d,\dots,\lfloor \frac nd \rfloor d\}$ 的形式（注意并不一定 $|A_d|=\lfloor \frac nd \rfloor$，比如 $77 \notin A_7$），显然组内的数都是不互质的。&lt;/p&gt;
+&lt;p&gt;如果 $|A_d|$ 是偶数，直接令组内的数任意两两配对；如果 $|A_d|$ 是奇数，则除了 $2d$ 以外任意两两配对。所有组都作完以上匹配之后，剩下的数都是 $2$ 的倍数，所以也都不互质，也可以任意两两配对。最后剩下的数显然至多只有一个。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="数论" scheme="http://tanakarino.cn/categories/%E6%95%B0%E8%AE%BA/"/>
+    
+      <category term="整除与同余" scheme="http://tanakarino.cn/categories/%E6%95%B0%E8%AE%BA/%E6%95%B4%E9%99%A4%E4%B8%8E%E5%90%8C%E4%BD%99/"/>
+    
+    
+      <category term="Messiel-Lehmer算法" scheme="http://tanakarino.cn/tags/Messiel-Lehmer%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>[20200426] 2020 Petrozavodsk Winter Camp Day 5</title>
+    <link href="http://tanakarino.cn/2020/05/01/20200426-2020-Petrozavodsk-Winter-Camp-Day-5/"/>
+    <id>http://tanakarino.cn/2020/05/01/20200426-2020-Petrozavodsk-Winter-Camp-Day-5/</id>
+    <published>2020-05-01T13:48:03.000Z</published>
+    <updated>2020-06-02T10:24:47.708Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Review&quot;&gt;&lt;a href=&quot;#Review&quot; class=&quot;headerlink&quot; title=&quot;Review&quot;&gt;&lt;/a&gt;Review&lt;/h1&gt;&lt;p&gt;&lt;a href=&quot;https://codeforces.com/profile/triple__a&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;triple_a&lt;/a&gt; 问我和 &lt;a href=&quot;https://codeforces.com/profile/nezzar&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;clp012345&lt;/a&gt; 要不要来玩，于是我就打了&lt;del&gt;，前 World Finalist 带飞谁不爱呢&lt;/del&gt;。&lt;/p&gt;
+&lt;p&gt;因为纯属娱乐所以可能并不是全力打，不过也并没有做到同一时刻只有一个人写……总之就是图一乐吧。&lt;/p&gt;
+&lt;p&gt;刚开场的时候因为是娱乐所以他们两个也就随便开题不跟榜了，我们各自读了一下几道题。clp012345 开始猛凹 C 凹了接近两个小时&lt;del&gt;，结果是 C 最后也没过&lt;/del&gt;。我看到有人过 L 就大力 WA 了一发，发现把大于写成大于等于，&lt;strong&gt;43min2A&lt;/strong&gt;。B 题 triple_a 说只会 TLE 的枚举子集，于是 clp012345 说 Sum over Submask DP 能做，&lt;strong&gt;51min1A&lt;/strong&gt;。triple_a 又读了 I 题，说做法显然但是难写，我一看题居然是原题（2016 CCPC Changchun J），可能毛子出题人没看过国内这场，于是直接复制粘贴交了，&lt;strong&gt;71min1A&lt;/strong&gt;。G 我之前就说是大力枚举，但我不会计算几何，让 triple_a 写了，&lt;strong&gt;105min2A&lt;/strong&gt;。我们交流了一下 F 的题意，然后 triple_a 觉得他大概会写，然后他说反正是随便打打所以他有事要出门了（草）。我大力猜了一下 A 题有个结论，但是需要筛 $10^{11}$ 以内的质数个数，时间复杂度没法接受，clp012345 告诉我有一种叫作 &lt;a href=&quot;https://tanakarino.cn/2020/04/27/Meissel-Lehmer算法/&quot;&gt;Meissel-Lehmer&lt;/a&gt; 的神棍算法可以 $O(n^\frac 23)$ 求这个东西……找了个板子复制粘贴（？），然后我搞错边界，又贡献一发罚时，&lt;strong&gt;156min2A&lt;/strong&gt;。期间 clp012345 单切了 H（我题都没读……），&lt;strong&gt;167min2A&lt;/strong&gt;。&lt;del&gt;接下来我假装看 C 和 E，其实已经没思路了完全躺了。&lt;/del&gt;但他们两个还是很猛，clp012345 单切了 J，&lt;strong&gt;230min4A&lt;/strong&gt;。triple_a 回来把 F 写了，&lt;strong&gt;257min2A&lt;/strong&gt;。我跟 clp012345 说 E 题的圆其实就是竖线，他说用离散化线段树维护一下就行，&lt;strong&gt;293min4A&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;前 World Finalist 带飞果然牛逼，9 个题&lt;del&gt;，力压 dmy&lt;/del&gt;，我全程躺着被带飞。&lt;/p&gt;
+&lt;h1 id=&quot;Solution（待完善）&quot;&gt;&lt;a href=&quot;#Solution（待完善）&quot; class=&quot;headerlink&quot; title=&quot;Solution（待完善）&quot;&gt;&lt;/a&gt;Solution（待完善）&lt;/h1&gt;&lt;h2 id=&quot;Problem-A-Bags-of-Candies&quot;&gt;&lt;a href=&quot;#Problem-A-Bags-of-Candies&quot; class=&quot;headerlink&quot; title=&quot;Problem A. Bags of Candies&quot;&gt;&lt;/a&gt;Problem A. Bags of Candies&lt;/h2&gt;&lt;h2 id=&quot;Problem-B-Binomial&quot;&gt;&lt;a href=&quot;#Problem-B-Binomial&quot; class=&quot;headerlink&quot; title=&quot;Problem B. Binomial&quot;&gt;&lt;/a&gt;Problem B. Binomial&lt;/h2&gt;&lt;h2 id=&quot;Problem-C-Bookface&quot;&gt;&lt;a href=&quot;#Problem-C-Bookface&quot; class=&quot;headerlink&quot; title=&quot;Problem C. Bookface&quot;&gt;&lt;/a&gt;Problem C. Bookface&lt;/h2&gt;&lt;p&gt;大致题意：数轴上有 $n$ 个点 $a_1,a_2,\dots,a_n$，每次你可以花费 $1$ 代价使某个点向某个方向移动 $1$（但所有点必须时刻在正半轴上）。现在，希望你求出最小总代价，使得任意两点间的距离都大于等于 $d$。有 $z$ 组测试数据。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="训练赛" scheme="http://tanakarino.cn/categories/%E8%AE%AD%E7%BB%83%E8%B5%9B/"/>
     
     
   </entry>
@@ -49,7 +282,7 @@
     <link href="http://tanakarino.cn/2020/04/27/Meissel-Lehmer%E7%AE%97%E6%B3%95/"/>
     <id>http://tanakarino.cn/2020/04/27/Meissel-Lehmer%E7%AE%97%E6%B3%95/</id>
     <published>2020-04-26T18:12:29.000Z</published>
-    <updated>2020-05-27T15:57:12.448Z</updated>
+    <updated>2020-05-27T17:58:16.761Z</updated>
     
     <summary type="html">
     
