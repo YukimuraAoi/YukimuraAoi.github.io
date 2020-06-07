@@ -398,4 +398,19 @@ k \lfloor \frac nk \rfloor ^ 2
         <tag>欧拉筛</tag>
       </tags>
   </entry>
+  <entry>
+    <title>[20200607] 2018-2019 ACM-ICPC, Asia Qingdao Regional Contest</title>
+    <url>/2020/06/07/20200607-2018-2019-ACM-ICPC-Asia-Qingdao-Regional-Contest/</url>
+    <content><![CDATA[<h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p>感觉还是好菜，该加训了……</p>
+<p>刚开场就开始演队友。我直接读了 J，迅速大力交了两发 WA 的二分答案。一看 M 过了好多，又大力交了一发 WA。想了一会，才突然意识到 J 题的合法性并不是单调的，于是，Luowaterbi 认为答案就是一个前缀和加一个后缀 min，我照做，又交了一发 WA。</p>
+<p>此时已经快一个小时了，而我们两个水题都 WA 着……我突然意识到 M 题需要特判 <code>0 1</code>，改了改过了，<strong>58min2A</strong>。owojiecao 突然发现 J 题 $0$ 必买，应该去掉 $0$ 再做。我和 Luowaterbi 纷纷感叹自己傻逼，然后我手抖写错，又交了两发才过，<strong>70min5A</strong>。此时发现 C 过题人数和 J 差不多，于是读 C，发现是个分类讨论傻逼题，然后我第一发没讨论没 $1$ 的情况，第二发交了个弱智 PE，第三发才过，<strong>84min3A</strong>。</p>
+<p>我智商完全不在线，短短不到一个半小时的时间连交了七发罚时，已经同题数垫底 rank 105，感谢队友不杀之恩。</p>
+<p>好在中期打得还不算烂。此时大多数人都是三题， DEF 都是刚有几个人通过。我读了 D，Luowaterbi 读了 F，无果，交换题意，我发现 F 是个找规律的构造题，手玩了一会之后会了，但没认真审题又交了一发 PE，<strong>142min2A</strong>，rank 上升到 43<del>，还是同题数垫底</del>。我们又读了难度跟 DF 相近的 E，我说二分答案显然，于是转化成询问给定步数之内能否访问每个位置给定次数。想了一会发现大力贪心似乎可行，但没处理好交了发 WA，遂下机交给 owojiecao 写 D。跟 luowaterbi 一起读了很久 E 的代码，改了三次，终于发现我有个地方写了点很弱智的东西……<strong>228min4A</strong>，rank 掉到 55<del>，还是同题数垫底（虽然之后有人帮我们垫底了）</del>。</p>
+<p>接下来只有 owojiecao 的 D 比较可以期待的样子，而我和 Luowaterbi 去读剩下的题里读相对可能比较可做的 L。事实证明 L 是个我们之中并没有人会的生成函数，而 owojiecao 的 D 也没调出来……</p>
+<p>最后 rank 80/354，什么时候能进个 Au 线呢……</p>
+<h1 id="Solution（咕咕）"><a href="#Solution（咕咕）" class="headerlink" title="Solution（咕咕）"></a>Solution（咕咕）</h1>]]></content>
+      <categories>
+        <category>_训练赛</category>
+      </categories>
+  </entry>
 </search>
