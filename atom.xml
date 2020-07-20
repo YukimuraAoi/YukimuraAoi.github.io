@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://tanakarino.cn/"/>
-  <updated>2020-06-07T12:03:24.647Z</updated>
+  <updated>2020-07-20T09:05:16.998Z</updated>
   <id>http://tanakarino.cn/</id>
   
   <author>
@@ -15,6 +15,49 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>[20200705] 2017-2018 CCPC, Qinhuangdao</title>
+    <link href="http://tanakarino.cn/2020/07/20/20200705-2017-2018-CCPC-Qinhuangdao/"/>
+    <id>http://tanakarino.cn/2020/07/20/20200705-2017-2018-CCPC-Qinhuangdao/</id>
+    <published>2020-07-20T08:58:22.000Z</published>
+    <updated>2020-07-20T09:05:16.998Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Review&quot;&gt;&lt;a href=&quot;#Review&quot; class=&quot;headerlink&quot; title=&quot;Review&quot;&gt;&lt;/a&gt;Review&lt;/h1&gt;&lt;p&gt;(咕咕)&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+      <category term="_训练赛" scheme="http://tanakarino.cn/categories/%E8%AE%AD%E7%BB%83%E8%B5%9B/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>[20200614] 2016-2017 ACM-ICPC, Asia Shenyang Regional Contest</title>
+    <link href="http://tanakarino.cn/2020/07/20/20200614-2016-2017-ACM-ICPC-Asia-Shenyang-Regional-Contest/"/>
+    <id>http://tanakarino.cn/2020/07/20/20200614-2016-2017-ACM-ICPC-Asia-Shenyang-Regional-Contest/</id>
+    <published>2020-07-20T08:07:33.000Z</published>
+    <updated>2020-07-20T08:52:06.456Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;Review&quot;&gt;&lt;a href=&quot;#Review&quot; class=&quot;headerlink&quot; title=&quot;Review&quot;&gt;&lt;/a&gt;Review&lt;/h1&gt;&lt;p&gt;开场 Luowaterbi 告诉我 I 是 sb 题，让输出四个数的和，然后我就直接 ull 冲了上去 WA 了一发，才发现最大值正好可以卡爆 ull……这种题意义何在啊！！！加了个特判过了，&lt;strong&gt;13min2A&lt;/strong&gt;。然后看榜好像 K 也很签到，于是写了一下，&lt;strong&gt;22min1A&lt;/strong&gt;，由于手速还可以所以 rank28。&lt;/p&gt;
+&lt;p&gt;接下来的 L 和 F 难度好像差不多，我们先读了 L，接着队友又去读 F 了。我对着 L 一顿口胡，最后突然想到正解才发现口胡的全是假的，于是交了一发过了，&lt;strong&gt;60min1A&lt;/strong&gt;，rank 掉到 31。然后我们对着 F 一顿推，但是没啥好的结论。推着推着，Luowaterbi 突然告诉我这个 F 居然有某种奇妙深刻的递推关系。但是数据范围又要求高精度，&lt;del&gt;所以我又开始展示我的垃圾 Java 水平&lt;/del&gt;，这么简单的代码写了好久，然后还连交了四发 WA，debug 了半天之后突然发现是因为文件创建在一个 package 里，所以 Intellij 自动在我的代码开头加了 package 我没发现……&lt;strong&gt;122min5A&lt;/strong&gt; 之后 rank 又掉到 37，&lt;del&gt;又是同题数垫底了……实在是我队传统艺能……&lt;/del&gt;&lt;/p&gt;
+&lt;p&gt;接下来 G 和 M 难度好像也差不多，我们先读了 G，接着队友又去读 M 了。我对着 G 一顿口胡&lt;del&gt;，说这个就是基环内向森林啊，然后类似后缀数组一样倍增乱搞一下就能搞出来&lt;/del&gt;。但是后缀数组我学得实在垃圾，只会抄板子，有点写不明白，然后我爬了。但是 Luowaterbi 就不一样了，他看了很久的 M，看着看着，Luowaterbi 突然告诉我这个 M 居然只跟每个位置的后继状态数有关。于是我迅速写了一下，&lt;strong&gt;287min1A&lt;/strong&gt;，rank 又掉到 46 了，我只能爬。&lt;/p&gt;
+&lt;p&gt;总成绩是 5 - 605，rank 50/186。只能说是稳定发挥，但是什么时候能进个 Au 线呢……其实这场六题 + 手速就 Au 了，就是说其实还是有希望的吧……（？&lt;/p&gt;
+&lt;h1 id=&quot;Solution（咕咕）&quot;&gt;&lt;a href=&quot;#Solution（咕咕）&quot; class=&quot;headerlink&quot; title=&quot;Solution（咕咕）&quot;&gt;&lt;/a&gt;Solution（咕咕）&lt;/h1&gt;
+    
+    </summary>
+    
+    
+      <category term="_训练赛" scheme="http://tanakarino.cn/categories/%E8%AE%AD%E7%BB%83%E8%B5%9B/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>[20200607] 2018-2019 ACM-ICPC, Asia Qingdao Regional Contest</title>
@@ -473,14 +516,14 @@ ans_{1}(inv) = inv \cdot a&lt;/script&gt;&lt;p&gt;考虑加上第二种操作，
     <link href="http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-A/"/>
     <id>http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-A/</id>
     <published>2020-06-02T09:46:06.000Z</published>
-    <updated>2020-07-20T07:25:22.486Z</updated>
+    <updated>2020-07-20T09:05:49.817Z</updated>
     
     <summary type="html">
     
       &lt;h1 id=&quot;Problem-A-Bags-of-Candies&quot;&gt;&lt;a href=&quot;#Problem-A-Bags-of-Candies&quot; class=&quot;headerlink&quot; title=&quot;Problem A. Bags of Candies&quot;&gt;&lt;/a&gt;Problem A. Bags of Candies&lt;/h1&gt;&lt;h2 id=&quot;Statement&quot;&gt;&lt;a href=&quot;#Statement&quot; class=&quot;headerlink&quot; title=&quot;Statement&quot;&gt;&lt;/a&gt;Statement&lt;/h2&gt;&lt;p&gt;把 $A = \{1,2,\dots,n\}$ 分成尽可能多对，使得每一对的两个数都不互质，问 $n$ 减去配对次数的值。有 $z$ 组测试数据。&lt;/p&gt;
 &lt;p&gt;$1 \leq z \leq 5$&lt;/p&gt;
 &lt;p&gt;$2 \leq n \leq 10^{11}$&lt;/p&gt;
-&lt;h2 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;headerlink&quot; title=&quot;Solution&quot;&gt;&lt;/a&gt;Solution&lt;/h2&gt;&lt;p&gt;半场的时候动这个题的队伍只有个位数。可能大家都觉得有别的题可做，不像我这么菜别的都不会就来瞎猜结论了啊。于是结论就是，将 $1$ 和大于 $\lfloor \frac n2 \rfloor$ 的质数从 $A$ 里删掉，剩下的集合 $A’$ 一定是可以匹配满的，所以答案就是 $\frac {|A’|}2$。&lt;/p&gt;
+&lt;h2 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;headerlink&quot; title=&quot;Solution&quot;&gt;&lt;/a&gt;Solution&lt;/h2&gt;&lt;p&gt;半场的时候动这个题的队伍只有个位数。可能大家都觉得有别的题可做，不像我这么菜别的都不会就来瞎猜结论了啊。于是结论就是，将 $1$ 和大于 $\lfloor \frac n2 \rfloor$ 的质数从 $A$ 里删掉，剩下的集合 $A’$ 一定是可以匹配满的，所以配对次数就是 $\frac {|A’|}2$。&lt;/p&gt;
 &lt;p&gt;&lt;del&gt;赛中是瞎猜的，&lt;/del&gt;这里给一个简单证明。&lt;/p&gt;
 &lt;p&gt;将 $A’$ 的所有元素按最大质因子 $d$ 分组，那么每组都可以表示成 $A_d = \{d,2d,\dots,\lfloor \frac nd \rfloor d\}$ 的形式（注意并不一定 $|A_d|=\lfloor \frac nd \rfloor$，比如 $77 \notin A_7$），显然组内的数都是不互质的。&lt;/p&gt;
 &lt;p&gt;如果 $|A_d|$ 是偶数，直接令组内的数任意两两配对；如果 $|A_d|$ 是奇数，则除了 $2d$ 以外任意两两配对。所有组都作完以上匹配之后，剩下的数都是 $2$ 的倍数，所以也都不互质，也可以任意两两配对。注意到对于任意 $d$ 有 $|A_d| \geq 2$ 即不存在 $|A_d| = 1$，所以最后剩下的数显然至多只有一个。&lt;/p&gt;

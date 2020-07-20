@@ -31,7 +31,7 @@
     <content><![CDATA[<h1 id="Problem-A-Bags-of-Candies"><a href="#Problem-A-Bags-of-Candies" class="headerlink" title="Problem A. Bags of Candies"></a>Problem A. Bags of Candies</h1><h2 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h2><p>把 $A = \{1,2,\dots,n\}$ 分成尽可能多对，使得每一对的两个数都不互质，问 $n$ 减去配对次数的值。有 $z$ 组测试数据。</p>
 <p>$1 \leq z \leq 5$</p>
 <p>$2 \leq n \leq 10^{11}$</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>半场的时候动这个题的队伍只有个位数。可能大家都觉得有别的题可做，不像我这么菜别的都不会就来瞎猜结论了啊。于是结论就是，将 $1$ 和大于 $\lfloor \frac n2 \rfloor$ 的质数从 $A$ 里删掉，剩下的集合 $A’$ 一定是可以匹配满的，所以答案就是 $\frac {|A’|}2$。</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>半场的时候动这个题的队伍只有个位数。可能大家都觉得有别的题可做，不像我这么菜别的都不会就来瞎猜结论了啊。于是结论就是，将 $1$ 和大于 $\lfloor \frac n2 \rfloor$ 的质数从 $A$ 里删掉，剩下的集合 $A’$ 一定是可以匹配满的，所以配对次数就是 $\frac {|A’|}2$。</p>
 <p><del>赛中是瞎猜的，</del>这里给一个简单证明。</p>
 <p>将 $A’$ 的所有元素按最大质因子 $d$ 分组，那么每组都可以表示成 $A_d = \{d,2d,\dots,\lfloor \frac nd \rfloor d\}$ 的形式（注意并不一定 $|A_d|=\lfloor \frac nd \rfloor$，比如 $77 \notin A_7$），显然组内的数都是不互质的。</p>
 <p>如果 $|A_d|$ 是偶数，直接令组内的数任意两两配对；如果 $|A_d|$ 是奇数，则除了 $2d$ 以外任意两两配对。所有组都作完以上匹配之后，剩下的数都是 $2$ 的倍数，所以也都不互质，也可以任意两两配对。注意到对于任意 $d$ 有 $|A_d| \geq 2$ 即不存在 $|A_d| = 1$，所以最后剩下的数显然至多只有一个。</p>
@@ -409,6 +409,27 @@ k \lfloor \frac nk \rfloor ^ 2
 <p>接下来只有 owojiecao 的 D 比较可以期待的样子，而我和 Luowaterbi 去读剩下的题里读相对可能比较可做的 L。事实证明 L 是个我们之中并没有人会的生成函数，而 owojiecao 的 D 也没调出来……</p>
 <p>最后 rank 80/354，什么时候能进个 Au 线呢……</p>
 <h1 id="Solution（咕咕）"><a href="#Solution（咕咕）" class="headerlink" title="Solution（咕咕）"></a>Solution（咕咕）</h1>]]></content>
+      <categories>
+        <category>_训练赛</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>[20200614] 2016-2017 ACM-ICPC, Asia Shenyang Regional Contest</title>
+    <url>/2020/07/20/20200614-2016-2017-ACM-ICPC-Asia-Shenyang-Regional-Contest/</url>
+    <content><![CDATA[<h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p>开场 Luowaterbi 告诉我 I 是 sb 题，让输出四个数的和，然后我就直接 ull 冲了上去 WA 了一发，才发现最大值正好可以卡爆 ull……这种题意义何在啊！！！加了个特判过了，<strong>13min2A</strong>。然后看榜好像 K 也很签到，于是写了一下，<strong>22min1A</strong>，由于手速还可以所以 rank28。</p>
+<p>接下来的 L 和 F 难度好像差不多，我们先读了 L，接着队友又去读 F 了。我对着 L 一顿口胡，最后突然想到正解才发现口胡的全是假的，于是交了一发过了，<strong>60min1A</strong>，rank 掉到 31。然后我们对着 F 一顿推，但是没啥好的结论。推着推着，Luowaterbi 突然告诉我这个 F 居然有某种奇妙深刻的递推关系。但是数据范围又要求高精度，<del>所以我又开始展示我的垃圾 Java 水平</del>，这么简单的代码写了好久，然后还连交了四发 WA，debug 了半天之后突然发现是因为文件创建在一个 package 里，所以 Intellij 自动在我的代码开头加了 package 我没发现……<strong>122min5A</strong> 之后 rank 又掉到 37，<del>又是同题数垫底了……实在是我队传统艺能……</del></p>
+<p>接下来 G 和 M 难度好像也差不多，我们先读了 G，接着队友又去读 M 了。我对着 G 一顿口胡<del>，说这个就是基环内向森林啊，然后类似后缀数组一样倍增乱搞一下就能搞出来</del>。但是后缀数组我学得实在垃圾，只会抄板子，有点写不明白，然后我爬了。但是 Luowaterbi 就不一样了，他看了很久的 M，看着看着，Luowaterbi 突然告诉我这个 M 居然只跟每个位置的后继状态数有关。于是我迅速写了一下，<strong>287min1A</strong>，rank 又掉到 46 了，我只能爬。</p>
+<p>总成绩是 5 - 605，rank 50/186。只能说是稳定发挥，但是什么时候能进个 Au 线呢……其实这场六题 + 手速就 Au 了，就是说其实还是有希望的吧……（？</p>
+<h1 id="Solution（咕咕）"><a href="#Solution（咕咕）" class="headerlink" title="Solution（咕咕）"></a>Solution（咕咕）</h1>]]></content>
+      <categories>
+        <category>_训练赛</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>[20200705] 2017-2018 CCPC, Qinhuangdao</title>
+    <url>/2020/07/20/20200705-2017-2018-CCPC-Qinhuangdao/</url>
+    <content><![CDATA[<h1 id="Review"><a href="#Review" class="headerlink" title="Review"></a>Review</h1><p>(咕咕)</p>
+]]></content>
       <categories>
         <category>_训练赛</category>
       </categories>

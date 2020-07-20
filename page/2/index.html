@@ -146,7 +146,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">16</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">18</span></a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -202,6 +202,214 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-L/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/aoi.jpg">
+      <meta itemprop="name" content="Nanako">
+      <meta itemprop="description" content="此般平和的日常，若是能一直持续下去就好了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nanako">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-L/" class="post-title-link" itemprop="url">2020 Petrozavodsk Winter Camp Day 5 L</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 18:21:19 / 修改时间：18:23:21" itemprop="dateCreated datePublished" datetime="2020-06-02T18:21:19+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BB%93%E8%AE%BA-%E8%A7%84%E5%BE%8B/" itemprop="url" rel="index"><span itemprop="name">结论/规律</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-L/" class="post-meta-item leancloud_visitors" data-flag-title="2020 Petrozavodsk Winter Camp Day 5 L" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-L/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-L/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Problem-L-Wizards-Unite"><a href="#Problem-L-Wizards-Unite" class="headerlink" title="Problem L. Wizards Unite"></a>Problem L. Wizards Unite</h1><h2 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h2><p>给 $1$ 把金钥匙（可多次使用的钥匙），$k$ 把银钥匙（只能用一次）。给 $n$ 个箱子，每个箱子有一个打开所需时间 $t_i$（跟钥匙类型无关）。一把钥匙同时只能开一个箱子，问打开所有箱子所需的最小总时间。有 $z$ 组测试数据。</p>
+<p>$0 \leq k &lt; n \leq 10^5$</p>
+<p>$0 \leq t_i \leq 10^9$</p>
+<p>$\sum n \leq 10^6$</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>本场最简单的题。</p>
+<p>不失一般性，我们认为所有箱子按 $t_i$ 排升序。显然方案只能是 $k$ 把银钥匙都用来开一个箱子，金钥匙开其他所有箱子，而答案就是以下两者中的较大值：用银钥匙的箱子中耗时最长的一个的耗时；金钥匙开其他所有箱子的耗时之和。</p>
+<p>注意到答案无论如何也不可能小于 $t_n$，也就是说用银钥匙开 $t_n$ 箱子一定不会浪费时间。那么为了令金钥匙耗时之和尽可能小，实际上 $k$ 把银钥匙开的就是最右边的 $k$ 个箱子，于是答案就很显然了。时间复杂度 $O(n \log n)$。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-L/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-J/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/aoi.jpg">
+      <meta itemprop="name" content="Nanako">
+      <meta itemprop="description" content="此般平和的日常，若是能一直持续下去就好了">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Nanako">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-J/" class="post-title-link" itemprop="url">2020 Petrozavodsk Winter Camp Day 5 J</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-06-02 18:14:35 / 修改时间：18:16:51" itemprop="dateCreated datePublished" datetime="2020-06-02T18:14:35+08:00">2020-06-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%B9%B6%E6%9F%A5%E9%9B%86/" itemprop="url" rel="index"><span itemprop="name">并查集</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-J/" class="post-meta-item leancloud_visitors" data-flag-title="2020 Petrozavodsk Winter Camp Day 5 J" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-J/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-J/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Problem-J-Space-Gophers"><a href="#Problem-J-Space-Gophers" class="headerlink" title="Problem J. Space Gophers"></a>Problem J. Space Gophers</h1><h2 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h2><p>有一个由边长为 $1$ 的小正方体组成的边长为 $10^6$ 的实心正方体。在其中挖 $n$ 条隧道，每条隧道用 $(-,y_i,z_i)$ 或 $(x_i,-,z_i)$ 或 $(x_i,y_i,-)$ 表示。挖隧道的含义是，指定其中两个维度的坐标，沿平行于另一个维度轴线的方向把 $10^6$ 个方块拿走。挖完 $n$ 条隧道之后，$q$ 次询问两个点 $(s_x,s_y,s_z)$ 和 $(t_x,t_y,t_z)$ 是否可以通过若干条隧道连通。保证 $s$ 和 $t$ 处于隧道中。有 $z$ 组测试数据。</p>
+<p>$1 \leq z \leq 6$</p>
+<p>$1 \leq n \leq 3 \times 10^5$, $1 \leq x_i,y_i,z_i \leq 10^6$</p>
+<p>$1 \leq q \leq 5 \times 10^5$, $1 \leq s_x,s_y,s_z,t_x,t_y,t_z \leq 10^6$</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>clp 单切之前大致跟我讲了一下做法。实际上两条隧道连通 iff 某一个维度坐标相等或相差 1，于是我们要做的事情就是把所有这样的隧道对找出来，在并查集上 merge 起来。</p>
+<p>这个东西说起来简单，实现起来就比较呕吐……具体还是看代码吧……<del>似乎是这篇文章里最长的代码</del></p>
+<h2 id="Code-By-clp012345"><a href="#Code-By-clp012345" class="headerlink" title="Code (By clp012345)"></a>Code (By clp012345)</h2>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-J/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
       
   
   
@@ -769,7 +977,7 @@ ans_{1}(inv) = inv \cdot a</script><p>考虑加上第二种操作，我们不难
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-20 15:25:22" itemprop="dateModified" datetime="2020-07-20T15:25:22+08:00">2020-07-20</time>
+                <time title="修改时间：2020-07-20 17:05:49" itemprop="dateModified" datetime="2020-07-20T17:05:49+08:00">2020-07-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -820,7 +1028,7 @@ ans_{1}(inv) = inv \cdot a</script><p>考虑加上第二种操作，我们不难
           <h1 id="Problem-A-Bags-of-Candies"><a href="#Problem-A-Bags-of-Candies" class="headerlink" title="Problem A. Bags of Candies"></a>Problem A. Bags of Candies</h1><h2 id="Statement"><a href="#Statement" class="headerlink" title="Statement"></a>Statement</h2><p>把 $A = \{1,2,\dots,n\}$ 分成尽可能多对，使得每一对的两个数都不互质，问 $n$ 减去配对次数的值。有 $z$ 组测试数据。</p>
 <p>$1 \leq z \leq 5$</p>
 <p>$2 \leq n \leq 10^{11}$</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>半场的时候动这个题的队伍只有个位数。可能大家都觉得有别的题可做，不像我这么菜别的都不会就来瞎猜结论了啊。于是结论就是，将 $1$ 和大于 $\lfloor \frac n2 \rfloor$ 的质数从 $A$ 里删掉，剩下的集合 $A’$ 一定是可以匹配满的，所以答案就是 $\frac {|A’|}2$。</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>半场的时候动这个题的队伍只有个位数。可能大家都觉得有别的题可做，不像我这么菜别的都不会就来瞎猜结论了啊。于是结论就是，将 $1$ 和大于 $\lfloor \frac n2 \rfloor$ 的质数从 $A$ 里删掉，剩下的集合 $A’$ 一定是可以匹配满的，所以配对次数就是 $\frac {|A’|}2$。</p>
 <p><del>赛中是瞎猜的，</del>这里给一个简单证明。</p>
 <p>将 $A’$ 的所有元素按最大质因子 $d$ 分组，那么每组都可以表示成 $A_d = \{d,2d,\dots,\lfloor \frac nd \rfloor d\}$ 的形式（注意并不一定 $|A_d|=\lfloor \frac nd \rfloor$，比如 $77 \notin A_7$），显然组内的数都是不互质的。</p>
 <p>如果 $|A_d|$ 是偶数，直接令组内的数任意两两配对；如果 $|A_d|$ 是奇数，则除了 $2d$ 以外任意两两配对。所有组都作完以上匹配之后，剩下的数都是 $2$ 的倍数，所以也都不互质，也可以任意两两配对。注意到对于任意 $d$ 有 $|A_d| \geq 2$ 即不存在 $|A_d| = 1$，所以最后剩下的数显然至多只有一个。</p>
@@ -917,7 +1125,7 @@ ans_{1}(inv) = inv \cdot a</script><p>考虑加上第二种操作，我们不难
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">16</span>
+          <span class="site-state-item-count">18</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
