@@ -114,7 +114,7 @@
     <link href="http://tanakarino.cn/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-C/"/>
     <id>http://tanakarino.cn/2020/06/02/2020-CCPC-Wannafly-Winter-Camp-Day-1-C/</id>
     <published>2020-06-02T10:58:21.000Z</published>
-    <updated>2020-06-02T11:14:01.546Z</updated>
+    <updated>2020-06-28T12:45:25.227Z</updated>
     
     <summary type="html">
     
@@ -126,7 +126,7 @@
 &lt;h2 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;headerlink&quot; title=&quot;Solution&quot;&gt;&lt;/a&gt;Solution&lt;/h2&gt;&lt;p&gt;考虑一张有 $n$ 个结点染上 $k$ 种颜色，每种颜色使用了 $a_i$ 次。既然只有同色是不能连边的，那么我们把除了同色的团只玩的边全部连起来。一个大小为 $x$ 的团有 $\frac{x(x+1)}2$ 条边，那么总边数应该是&lt;/p&gt;
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;
 \binom{n}{2} -
-\sum_{i=1}^{k} \binom{a_i}{2}&lt;/script&gt;&lt;p&gt;不难发现，要最大化总边数其实也就是要最小化 $\sum_{i=1}^k a_i^2$。所以，$a_i$ 肯定是均分，即有 $n \bmod k$ 个 $a_i$ 等于 $\lfloor \frac nk \rfloor + 1$，剩下的 $k - n \bmod k$ 个 $a_i$ 等于 $\lfloor \frac nk \rfloor$。&lt;del&gt;所谓「大胆猜想，从不求证」。证明？问就是不会。这是学了这么多年数学的数学直觉。&lt;/del&gt;&lt;/p&gt;
+\sum_{i=1}^{k} \binom{a_i}{2}&lt;/script&gt;&lt;p&gt;不难发现，要最大化总边数其实也就是要最小化 $\sum_{i=1}^k a_i^2$。为满足这一点，$a_i$ 应当均分。如果 $a_i$ 不是均分，即存在 $i,j$ 使得 $|a_i-a_j| \geq 2$，那么令 $a_i = a_j = \frac{a_i+a_j}{2}$，$\sum_{i=1}^k a_i^2$ 显然变小。所以，$a_i$ 肯定是均分，即有 $n \bmod k$ 个 $a_i$ 等于 $\lfloor \frac nk \rfloor + 1$，剩下的 $k - n \bmod k$ 个 $a_i$ 等于 $\lfloor \frac nk \rfloor$。&lt;/p&gt;
     
     </summary>
     
@@ -473,17 +473,17 @@ ans_{1}(inv) = inv \cdot a&lt;/script&gt;&lt;p&gt;考虑加上第二种操作，
     <link href="http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-A/"/>
     <id>http://tanakarino.cn/2020/06/02/2020-Petrozavodsk-Winter-Camp-Day-5-A/</id>
     <published>2020-06-02T09:46:06.000Z</published>
-    <updated>2020-06-02T10:47:56.782Z</updated>
+    <updated>2020-07-20T07:25:22.486Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Problem-A-Bags-of-Candies&quot;&gt;&lt;a href=&quot;#Problem-A-Bags-of-Candies&quot; class=&quot;headerlink&quot; title=&quot;Problem A. Bags of Candies&quot;&gt;&lt;/a&gt;Problem A. Bags of Candies&lt;/h1&gt;&lt;h2 id=&quot;Statement&quot;&gt;&lt;a href=&quot;#Statement&quot; class=&quot;headerlink&quot; title=&quot;Statement&quot;&gt;&lt;/a&gt;Statement&lt;/h2&gt;&lt;p&gt;把 $A = \{1,2,\dots,n\}$ 分成尽可能多对，使得每一对的两个数都不互质，问最大可能的对数。有 $z$ 组测试数据。&lt;/p&gt;
+      &lt;h1 id=&quot;Problem-A-Bags-of-Candies&quot;&gt;&lt;a href=&quot;#Problem-A-Bags-of-Candies&quot; class=&quot;headerlink&quot; title=&quot;Problem A. Bags of Candies&quot;&gt;&lt;/a&gt;Problem A. Bags of Candies&lt;/h1&gt;&lt;h2 id=&quot;Statement&quot;&gt;&lt;a href=&quot;#Statement&quot; class=&quot;headerlink&quot; title=&quot;Statement&quot;&gt;&lt;/a&gt;Statement&lt;/h2&gt;&lt;p&gt;把 $A = \{1,2,\dots,n\}$ 分成尽可能多对，使得每一对的两个数都不互质，问 $n$ 减去配对次数的值。有 $z$ 组测试数据。&lt;/p&gt;
 &lt;p&gt;$1 \leq z \leq 5$&lt;/p&gt;
 &lt;p&gt;$2 \leq n \leq 10^{11}$&lt;/p&gt;
-&lt;h2 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;headerlink&quot; title=&quot;Solution&quot;&gt;&lt;/a&gt;Solution&lt;/h2&gt;&lt;p&gt;半场的时候动这个题的队伍只有个位数。可能大家都觉得有别的题可做，不像我这么菜别的都不会就来瞎猜结论了啊。于是结论就是，将 $1$ 和大于 $\frac n2$ 的质数从 $A$ 里删掉，剩下的集合 $A’$ 一定是可以匹配满的，所以答案就是 $\frac {|A’|}2$。&lt;/p&gt;
+&lt;h2 id=&quot;Solution&quot;&gt;&lt;a href=&quot;#Solution&quot; class=&quot;headerlink&quot; title=&quot;Solution&quot;&gt;&lt;/a&gt;Solution&lt;/h2&gt;&lt;p&gt;半场的时候动这个题的队伍只有个位数。可能大家都觉得有别的题可做，不像我这么菜别的都不会就来瞎猜结论了啊。于是结论就是，将 $1$ 和大于 $\lfloor \frac n2 \rfloor$ 的质数从 $A$ 里删掉，剩下的集合 $A’$ 一定是可以匹配满的，所以答案就是 $\frac {|A’|}2$。&lt;/p&gt;
 &lt;p&gt;&lt;del&gt;赛中是瞎猜的，&lt;/del&gt;这里给一个简单证明。&lt;/p&gt;
 &lt;p&gt;将 $A’$ 的所有元素按最大质因子 $d$ 分组，那么每组都可以表示成 $A_d = \{d,2d,\dots,\lfloor \frac nd \rfloor d\}$ 的形式（注意并不一定 $|A_d|=\lfloor \frac nd \rfloor$，比如 $77 \notin A_7$），显然组内的数都是不互质的。&lt;/p&gt;
-&lt;p&gt;如果 $|A_d|$ 是偶数，直接令组内的数任意两两配对；如果 $|A_d|$ 是奇数，则除了 $2d$ 以外任意两两配对。所有组都作完以上匹配之后，剩下的数都是 $2$ 的倍数，所以也都不互质，也可以任意两两配对。最后剩下的数显然至多只有一个。&lt;/p&gt;
+&lt;p&gt;如果 $|A_d|$ 是偶数，直接令组内的数任意两两配对；如果 $|A_d|$ 是奇数，则除了 $2d$ 以外任意两两配对。所有组都作完以上匹配之后，剩下的数都是 $2$ 的倍数，所以也都不互质，也可以任意两两配对。注意到对于任意 $d$ 有 $|A_d| \geq 2$ 即不存在 $|A_d| = 1$，所以最后剩下的数显然至多只有一个。&lt;/p&gt;
     
     </summary>
     

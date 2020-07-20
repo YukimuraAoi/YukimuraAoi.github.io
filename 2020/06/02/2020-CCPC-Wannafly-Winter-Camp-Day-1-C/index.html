@@ -28,7 +28,7 @@
 <meta property="og:description" content="Problem C. 染色图色图？哪里有色图？ Statement在一张无向图中，如果存在一种方案，使得给每个结点染上一种颜色 $c_i \in [1,k]$ 后，任意一对相邻结点的颜色不同，则称这张无向图可以 $k$ 染色。在有 $n$ 个节点的、可以 $k$ 染色的所有简单图中，选出边数最多的一个，我们记其边数为 $g(n,k)$。 现在，给定 $n,l,r$，求 $\sum_{i&#x3D;l}^{r">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-06-02T10:58:21.000Z">
-<meta property="article:modified_time" content="2020-06-02T11:14:01.546Z">
+<meta property="article:modified_time" content="2020-06-28T12:45:25.227Z">
 <meta property="article:author" content="Nanako">
 <meta property="article:tag" content="数论分块">
 <meta name="twitter:card" content="summary">
@@ -232,10 +232,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-06-02 18:58:21 / 修改时间：19:14:01" itemprop="dateCreated datePublished" datetime="2020-06-02T18:58:21+08:00">2020-06-02</time>
+              <time title="创建时间：2020-06-02 18:58:21" itemprop="dateCreated datePublished" datetime="2020-06-02T18:58:21+08:00">2020-06-02</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-06-28 20:45:25" itemprop="dateModified" datetime="2020-06-28T20:45:25+08:00">2020-06-28</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -290,7 +296,7 @@
 <h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>考虑一张有 $n$ 个结点染上 $k$ 种颜色，每种颜色使用了 $a_i$ 次。既然只有同色是不能连边的，那么我们把除了同色的团只玩的边全部连起来。一个大小为 $x$ 的团有 $\frac{x(x+1)}2$ 条边，那么总边数应该是</p>
 <script type="math/tex; mode=display">
 \binom{n}{2} -
-\sum_{i=1}^{k} \binom{a_i}{2}</script><p>不难发现，要最大化总边数其实也就是要最小化 $\sum_{i=1}^k a_i^2$。所以，$a_i$ 肯定是均分，即有 $n \bmod k$ 个 $a_i$ 等于 $\lfloor \frac nk \rfloor + 1$，剩下的 $k - n \bmod k$ 个 $a_i$ 等于 $\lfloor \frac nk \rfloor$。<del>所谓「大胆猜想，从不求证」。证明？问就是不会。这是学了这么多年数学的数学直觉。</del></p>
+\sum_{i=1}^{k} \binom{a_i}{2}</script><p>不难发现，要最大化总边数其实也就是要最小化 $\sum_{i=1}^k a_i^2$。为满足这一点，$a_i$ 应当均分。如果 $a_i$ 不是均分，即存在 $i,j$ 使得 $|a_i-a_j| \geq 2$，那么令 $a_i = a_j = \frac{a_i+a_j}{2}$，$\sum_{i=1}^k a_i^2$ 显然变小。所以，$a_i$ 肯定是均分，即有 $n \bmod k$ 个 $a_i$ 等于 $\lfloor \frac nk \rfloor + 1$，剩下的 $k - n \bmod k$ 个 $a_i$ 等于 $\lfloor \frac nk \rfloor$。</p>
 <p>又考虑到 $n \bmod k$ 其实就等于 $n - k\lfloor \frac nk \rfloor$，所以，我们得出一个很长很长的式子</p>
 <script type="math/tex; mode=display">
 g(n, k) = \binom {n}{2}
@@ -464,10 +470,13 @@ k \lfloor \frac nk \rfloor ^ 2
           <a href="https://blog.csdn.net/Luowaterbi" title="https://blog.csdn.net/Luowaterbi" rel="noopener" target="_blank">Luowaterbi</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://www.cnblogs.com/jiecaoer/" title="https://www.cnblogs.com/jiecaoer/" rel="noopener" target="_blank">owojiecao</a>
+          <a href="https://www.cnblogs.com/jiecaoer" title="https://www.cnblogs.com/jiecaoer" rel="noopener" target="_blank">owojiecao</a>
         </li>
         <li class="links-of-blogroll-item">
-          <a href="https://bakapiano.github.io/" title="https://bakapiano.github.io/" rel="noopener" target="_blank">Bakapiano</a>
+          <a href="https://bakapiano.github.io" title="https://bakapiano.github.io" rel="noopener" target="_blank">Bakapiano</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://lifeni.life" title="https://lifeni.life" rel="noopener" target="_blank">Lifeni</a>
         </li>
     </ul>
   </div>
